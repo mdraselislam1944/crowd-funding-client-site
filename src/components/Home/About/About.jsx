@@ -1,10 +1,10 @@
-import Container from "../../Container";
 import img1 from '../../../assets/images/about-1.png';
 import img2 from '../../../assets/images/about-2.png';
 
 const About = () => {
   return (
-    <Container>
+    <div>
+   
       <div className="text-center mt-8">
         <h2 className="text-3xl font-bold">About Us</h2>
         <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
@@ -29,7 +29,8 @@ const About = () => {
           <button className="mt-4 px-4 py-2 bg-[#F99F24] text-white font-semibold shadow-2xl hover:bg-[#fd9400]">See More</button>
         </div>
       </div>
-    </Container>
+ 
+    </div>
   );
 };
 
