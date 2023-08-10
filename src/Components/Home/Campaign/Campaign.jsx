@@ -9,6 +9,7 @@ const Campaign = () => {
                 </div>
                 <div>
                     <h1>Atreus</h1>
+                    <h2>Samiul</h2>
                 </div>
             </div>
         </div>
