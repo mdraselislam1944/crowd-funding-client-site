@@ -25,6 +25,8 @@ function App() {
         <h1 className='bg-blue-400 font-extrabold p-4 text-red-600'>Sakib Boss!</h1>
 
         <h1 className='bg-blue-400 font-extrabold p-4 text-red-600'>Sakib Atreus!</h1>
+
+        <h1 className='bg-blue-400 font-extrabold p-4 text-red-600'>Sakib Boss!</h1>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
