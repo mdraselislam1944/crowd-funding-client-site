@@ -5,7 +5,7 @@ const Campaign = () => {
             <hr className="w-20 border-2 rounded border-orange-400" />
             <div>
                 <div>
-                    <h1>Samiul</h1>
+                    <h1>Samiul Sakib</h1>
                     <h1>Sakib</h1>
                 </div>
                 <div>
