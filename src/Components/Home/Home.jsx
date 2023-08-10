@@ -1,4 +1,5 @@
 import Campaign from "./Campaign/Campaign";
+import News from "./News/News";
 import Success from "./Success/Success";
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
         <div>
             <Campaign></Campaign>
             <Success></Success>
+            <News></News>
         </div>
     );
 };
