@@ -1,10 +1,9 @@
-import Container from "../../Container";
 import { FaSchool } from "react-icons/fa";
 import { FaCloudBolt, FaHouseMedical, FaPersonDress, FaPersonRifle } from "react-icons/fa6";
 
 const Category = () => {
   return (
-    <Container>
+    <div>
       <div className="text-center md:pt-20">
         <h2 className="text-3xl font-bold">View by Category</h2>
         <hr className="border-b-[3px] w-[106px] mt-3 border-[#F99F24] mx-auto" />
@@ -36,7 +35,7 @@ const Category = () => {
           <p className="text-lg font-semibold">Children</p>
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 
