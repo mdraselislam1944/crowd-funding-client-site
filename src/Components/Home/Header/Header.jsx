@@ -3,12 +3,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import slide1 from "../assets/img/banner/jakub-kriz-oZn9nTbECnc-unsplash-removebg-preview.png";
-import slide2 from "../assets/img/banner/qasim-sadiq-MUlE4pw78Ec-unsplash-removebg-preview.png";
-import slide3 from "../assets/img/banner/alain-bonnardeaux-pKfnCx_Zdpo-unsplash-removebg-preview.png";
+import slide1 from "../../../assets/img/banner/alain-bonnardeaux-pKfnCx_Zdpo-unsplash-removebg-preview.png";
+import slide2 from "../../../assets/img/banner/jakub-kriz-oZn9nTbECnc-unsplash-removebg-preview.png";
+import slide3 from "../../../assets/img/banner/qasim-sadiq-MUlE4pw78Ec-unsplash-removebg-preview.png";
 
 import { Keyboard, Pagination, Navigation } from "swiper/modules";
-import logo from "../assets/img/logo-main/Orange_Black_Hummingbird_Tech_Digital_Bird_Logo__1_-removebg-preview.png";
+import logo from "../../../assets/img/logo-main/Orange_Black_Hummingbird_Tech_Digital_Bird_Logo__1_-removebg-preview.png";
 
 const Header = () => {
   return (
