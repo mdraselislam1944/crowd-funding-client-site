@@ -1,3 +1,4 @@
+import Animation from "../Animation/Animation";
 import About from "./About/About";
 import Campaign from "./Campaign/Campaign";
 import Category from "./Category/Category";
@@ -10,6 +11,7 @@ const Home = () => {
             <About></About>
             <Campaign></Campaign>
             <Category></Category>
+            <Animation></Animation>
             <Success></Success>
             <News></News>
         </div>

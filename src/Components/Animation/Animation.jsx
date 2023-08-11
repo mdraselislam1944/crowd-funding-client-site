@@ -1,4 +1,3 @@
-import React from 'react';
 import "./Animation.css";
 import { FaBullhorn,FaHandHoldingUsd,FaDonate,FaShoppingBag } from "react-icons/fa";
 const Animation = () => {
