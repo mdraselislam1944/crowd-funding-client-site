@@ -2,7 +2,7 @@ import "./Animation.css";
 import { FaBullhorn,FaHandHoldingUsd,FaDonate,FaShoppingBag } from "react-icons/fa";
 const Animation = () => {
     return (
-        <div className="bg-[#EEF7FF] h-full pb-[180vh] my-5 pt-5">
+        <div className="bg-[#EEF7FF] h-full pb-[100vh] my-5 pt-5">
            <div className="text-center mt-8">
         <h2 className="text-3xl font-bold">How We Function</h2>
         <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
@@ -38,6 +38,7 @@ const Animation = () => {
                             <span className='circle'/>
                         </div>
                     </li>
+                    
                 </ul>
             </div>
 

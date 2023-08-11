@@ -15,7 +15,7 @@ transform: translateX(-50px);
     position: absolute;
     content: " ";
     width: 2px;
-    height: 180vh;
+    height: 100vh;
     background-image: linear-gradient(to bottom, rgb(106,6,236),rgb(220,0,240));
 }
 .circle{
