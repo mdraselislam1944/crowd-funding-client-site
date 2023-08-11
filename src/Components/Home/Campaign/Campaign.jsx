@@ -6,14 +6,13 @@ const Campaign = () => {
     return (
         <div className="bg-[#EEF7FF] p-6">
             <h1 className="text-center text-3xl font-bold pt-5 mb-3">Feature Campaigns</h1>
-            <hr className="w-20 border-2 rounded border-orange-400 mx-auto mt-1" />
+            <hr className="w-32 border-2 rounded border-orange-400 mx-auto mt-1" />
             <div className="grid lg:grid-cols-2 grid-cols-1 mt-7 gap-16">
-                <div className="grid lg:grid-cols-3 grid-cols-1">
-                    <div></div>
+                <div className="grid lg:grid-cols-1 grid-cols-1">
                     <div>
-                        <h2 className="text-2xl font-bold">Donate  on our ongoing <br /> projects today.</h2>
-                        <p className="text-lg mt-4">Your small contribution can bring <br /> smile and happiness to a family.</p>
-                        <p className="text-lg mt-4">Donate today and spread love <br /> and joy to the people.</p>
+                        <h2 className="text-2xl font-bold">Donate  on our ongoing projects today.</h2>
+                        <p className="text-lg mt-4">Your small contribution can bring smile and happiness to a family. Donate for Palestinian people in this war period against the Israeli Military Force. </p>
+                        <p className="text-lg mt-4">Donate today and spread love and joy to the people.</p>
                         <p className="text-lg mt-4">We are the dreamers who dream to make the world a better home.</p>
                     </div>
                 </div>
