@@ -10,7 +10,7 @@ const Success = () => {
                 <h2 className="text-3xl font-bold ">Success Stories</h2>
                 <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
             </div>
-            <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-2">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 lg:m-2 md:m-2 m-8">
                 <div className="card  bg-base-100 shadow-xl">
                     <figure><img src={img1} alt="Shoes" />
                     <h4 className="absolute top-0 right-0 rounded-2xl bg-cyan-300 p-2 fond-black">On going</h4>
@@ -19,7 +19,6 @@ const Success = () => {
                     <div className="card-body">
                         <h2 className="card-title text-2xl">
                            African water crisis</h2>
-                        {/* <p>If a dog chews shoes whose shoes does he choose?</p> */}
                         <div className="flex justify-around gap-2">
                             <div>
                                 <p>$1000</p>
@@ -47,7 +46,7 @@ const Success = () => {
                     <div className="card-body">
                         <h2 className="card-title text-2xl">
                            African water crisis</h2>
-                        {/* <p>If a dog chews shoes whose shoes does he choose?</p> */}
+                      
                         <div className="flex justify-around gap-2">
                             <div>
                                 <p>$1000</p>
@@ -75,7 +74,7 @@ const Success = () => {
                     <div className="card-body">
                         <h2 className="card-title text-2xl">
                         Nigeria war crisis</h2>
-                        {/* <p>If a dog chews shoes whose shoes does he choose?</p> */}
+                        
                         <div className="flex justify-around gap-2">
                             <div>
                                 <p>$1000</p>
