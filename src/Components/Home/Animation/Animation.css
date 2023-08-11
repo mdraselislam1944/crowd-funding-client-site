@@ -16,12 +16,12 @@ transform: translateX(-50px);
     content: " ";
     width: 2px;
     height: 100vh;
-    background-image: linear-gradient(to bottom, rgb(106,6,236),rgb(220,0,240));
+    background-image: linear-gradient(to bottom, rgb(106,6,236),rgb(249,159,36));
 }
 .circle{
   width: 30px;
   height: 30px;
-  background-color: rgb(220,0,240);
+  background-color: #F99F24;
   border-radius: 50%;
   position: absolute;
   top: 0;
@@ -32,7 +32,7 @@ transform: translateX(-50px);
     content: " ";
     width: 15px;
     height: 15px;
-    background-color: rgb(106,6,236);
+    background-color: black;
     border-radius: 50%;
     position: absolute;
     top: 25%;
