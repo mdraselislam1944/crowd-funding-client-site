@@ -1,4 +1,4 @@
-import Animation from "../Animation/Animation";
+import Animation from "./Animation/Animation";
 import About from "./About/About";
 import Campaign from "./Campaign/Campaign";
 import Category from "./Category/Category";
