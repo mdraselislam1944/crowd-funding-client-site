@@ -1,15 +1,58 @@
+import image from "../../../assets/img/others img/mohammed-ibrahim-jrcvHflmKvg-unsplash.jpg";
+
+
+
 const Campaign = () => {
     return (
-        <div>
-            <h1 className="text-center text-2xl font-bold">Feature Campaigns</h1>
-            <hr className="w-20 border-2 rounded border-orange-400" />
-            <div>
-                <div>
-                    <h1>Samiul Sakib</h1>
-                    <h1>Sakib</h1>
+        <div className="bg-[#EEF7FF] p-6">
+            <h1 className="text-center text-4xl font-bold pt-5 mb-3">Feature Campaigns</h1>
+            <hr className="w-20 border-2 rounded border-orange-400 mx-auto mt-1" />
+            <div className="grid lg:grid-cols-2 grid-cols-1 mt-7 gap-16">
+                <div className="">
+                    <h2 className="text-2xl font-bold">Donate  on our ongoing projects today.</h2>
+                    <p className="text-lg">Your small contribution can bring smile and happiness to a family. Donate today and spread love and joy to the people.</p>
                 </div>
-                <div>
-                    <h1>Atreus</h1>
+                <div className="grid lg:grid-cols-2 grid-cols-1 bg-[#EEEEEE] p-5">
+                    <div>
+                        <h1 className="text-2xl font-bold">Emergency support for Palestinian crisis.</h1>
+                        <p className="text-lg">Donate for Palestinian people in this war period against the Israeli Military Force. </p>
+                        <progress className="progress progress-primary w-56 mt-6" value="50" max="100"></progress>
+                        <p className="text-lg">50% Raised</p>
+                        <p className="text-lg mt-3 mb-4">Goal: $5000</p>
+                    </div>
+                    <div className="">
+                        <div className="carousel ">
+                            <div id="slide1" className="carousel-item relative w-full">
+                                <img src={image} className="w-80 h-48" />
+                                <div className="absolute transform left-5 right-5 top-1/2">
+                                <a href="#slide4" className="btn glass">❮</a> 
+                                <a href="#slide2" className="btn glass">❯</a>
+                                </div>
+                            </div> 
+                            <div id="slide2" className="carousel-item relative w-full">
+                                <img src={image} className="w-80 h-48" />
+                                <div className="absolute transform  left-5 right-5 top-1/2">
+                                <a href="#slide1" className="btn glass">❮</a> 
+                                <a href="#slide3" className="btn glass">❯</a>
+                                </div>
+                            </div> 
+                            <div id="slide3" className="carousel-item relative w-full">
+                                <img src={image} className="w-80 h-48" />
+                                <div className="absolute transform left-5 right-5 top-1/2">
+                                <a href="#slide2" className="btn glass">❮</a> 
+                                <a href="#slide4" className="btn glass">❯</a>
+                                </div>
+                            </div> 
+                            <div id="slide4" className="carousel-item relative w-full">
+                                <img src={image} className="w-80 h-48" />
+                                <div className="absolute transform left-5 right-5 top-1/2">
+                                <a href="#slide3" className="btn glass">❮</a> 
+                                <a href="#slide1" className="btn glass">❯</a>
+                                </div>
+                            </div>
+                        </div>
+                        <button className="btn btn-warning mt-1">Donate Now</button>
+                    </div>
                 </div>
             </div>
         </div>
