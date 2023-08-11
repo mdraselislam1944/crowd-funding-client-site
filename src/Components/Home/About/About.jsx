@@ -9,7 +9,7 @@ const About = () => {
         <h2 className="text-3xl font-bold">About Us</h2>
         <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-8 md:mt-16  mb-28">
+      <div className="grid grid-cols-1 md:grid-cols-2 mt-8 md:mt-16  mb-28 p-5">
         <div className="relative flex text-center justify-center">
 
           <div>
