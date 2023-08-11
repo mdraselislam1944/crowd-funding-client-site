@@ -1,6 +1,6 @@
 import brand1 from '../../../assets/img/partner-logos/brand-1.png'
 import brand2 from '../../../assets/img/partner-logos/brand-2.png'
-import brand3 from '../../../assets/img/partner-logos/brand-3.png'
+// import brand3 from '../../../assets/img/partner-logos/brand-3.png'
 import brand4 from '../../../assets/img/partner-logos/brand-4.png'
 import brand11 from '../../../assets/img/partner-logos/brand-11.png'
 import brand12 from '../../../assets/img/partner-logos/brand-12.png'
