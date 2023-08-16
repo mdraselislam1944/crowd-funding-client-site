@@ -5,7 +5,6 @@ import Category from "./Category/Category";
 import News from "./News/News";
 import Success from "./Success/Success";
 import Partners from "./Partners/Partners";
-import Footer from "./Footer/Footer";
 import Animation from "./Animation/Animation";
 import Header from "./Header/Header";
 
@@ -21,7 +20,7 @@ const Home = () => {
         <Success></Success>
         <News></News>
         <Partners></Partners>
-        <Footer></Footer>
+       
       </div>
     );
    
