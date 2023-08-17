@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import img1 from '../../../assets/images/about-1.png';
 import img2 from '../../../assets/images/about-2.png';
 
@@ -26,7 +27,9 @@ const About = () => {
             <p>We are the dreamers who dream to make the world a better home.</p>
             <p>We are the dreamers who dream to make the world a better home.</p>
           </div>
-          <button className="mt-4 px-4 py-2 bg-[#F99F24] text-white font-semibold shadow-2xl hover:bg-[#fd9400] rounded">See More</button>
+        <Link to="/about">
+        <button className="mt-4 px-4 py-2 bg-[#F99F24] text-white font-semibold shadow-2xl hover:bg-[#fd9400] rounded">See More</button>
+        </Link>
         </div>
       </div>
  

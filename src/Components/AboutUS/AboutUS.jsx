@@ -2,6 +2,7 @@ import SharedBanner from "../Contact/SharedBanner";
 import Partners from "../Home/Partners/Partners";
 import background from "../../assets/img/section-banner/about-section.jpg";
 import sectionImage from "../../assets/img/section-banner/contact-banner.jpg"
+import ocg from "../../assets/img/others img/ocg-saving-the-ocean-uXfYLTmF6fo-unsplash.jpg";
 
 
 const AboutUs = () => {
@@ -22,8 +23,8 @@ const AboutUs = () => {
             <section className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${sectionImage})` }}>
 
                 <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 p-3 lg:text-left md:text-left text-center pt-7">
-                    <div className="">
-                        <img src="https://c4.wallpaperflare.com/wallpaper/133/969/139/artwork-nature-landscape-fantasy-art-wallpaper-thumb.jpg" alt="" />
+                    <div className="lg:pe-4 pe-0">
+                        <img src={ocg} alt="" />
                     </div>
                     <div>
                         <h1 className="font-black text-3xl pb-5 mt-3">We are a global leader within a worldwide movement dedicated to ending poverty</h1>
