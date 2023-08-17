@@ -3,8 +3,8 @@ import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <div className='bg-gradient-to-r mt-10 bg-neutral text-white py-5 lg:ps-0 md:ps-5 ps-5'>
-            <footer className="footer max-w-7xl mx-auto">
+        <div className='max-w-7xl mx-auto bg-gradient-to-r mt-10 bg-neutral text-white py-5 lg:ps-0 md:ps-5 ps-5'>
+            <footer className="footer ps-7">
                 <div>
                     <img className='w-56' src={logo}></img>
                     <p>Duis elementum sapien et neque<br></br> lobortis laoreet.  Pellentesque<br></br> habitant morbi tristique senectus<br></br> et netus et malesuada</p>
@@ -39,12 +39,12 @@ const Footer = () => {
                         </div>
                     </div>
                     {/* social icons  */}
-                    <div className='flex gap-2 text-2xl mt-5'>
+                    {/* <div className='flex gap-2 text-2xl mt-5'>
                         <FaFacebook />
                         <FaInstagram />
                         <FaTwitter />
                         <FaYoutube />
-                    </div>
+                    </div> */}
                 </div>
             </footer>
 
@@ -52,19 +52,25 @@ const Footer = () => {
             {/* copyright and social  */}
 
          
-            <div className='flex justify-between mt-10 items-center'>
+            <div className='flex justify-around mt-10 items-center'>
                 <div>
                     <p>Copyright © 2023. UniAid all Rights Reserved</p>
                 </div>
 
                 {/* social icons  */}
-                <div className='flex gap-2 text-3xl'>
+                {/* <div className='flex gap-2 text-3xl'>
                     <FaFacebook />
                     <FaInstagram />
                     <FaTwitter />
                     <FaYoutube />
-                </div>
+                </div> */}
             </div>
+            <div className='flex justify-center gap-2 text-2xl mt-5'>
+                        <FaFacebook />
+                        <FaInstagram />
+                        <FaTwitter />
+                        <FaYoutube />
+                    </div>
         </div>
 
     );

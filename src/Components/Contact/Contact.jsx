@@ -11,11 +11,11 @@ const Contact = () => {
         console.log('clicked')
     }
     return (
-        <div className="">
+        <div className="max-w-7xl mx-auto">
             <div>
                  <SharedBanner
                     background={background}
-                    title="About Us"
+                    title="Contact Us"
                     titleHead="Get connected now"
                     titleDes={
                         <>
@@ -27,8 +27,8 @@ const Contact = () => {
                     }
                 ></SharedBanner> 
 
-                <div className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${bg})` }}>
-                    <div className="md:flex justify-center mx-auto">
+                <div className="bg-cover bg-center bg-no-repeat ps-7" style={{ backgroundImage: `url(${bg})` }}>
+                    <div className="md:flex justify-center mx-auto pb-8 pt-8">
                         <div className="text-neutral">
                             <h1 className="text-3xl text-[#F99F24]">Address</h1>
                             <div className="flex items-center gap-3 mt-5">
@@ -72,7 +72,7 @@ const Contact = () => {
 
 
 
-             <div className="mapouter relative text-right w-full h-[400px] mt-10">
+             <div className="mapouter relative text-right w-full h-[400px] mt-8">
                     <div className="gmap_canvas">
                         <iframe
                             title="Google Map"
