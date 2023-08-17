@@ -1,0 +1,31 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+const PaginatedData = () => {
+  const totalData = 3;
+  const [pages, setPages] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await axios.get(`http://localhost:5000/campaigns?&page=${currentPage + 1}`);
+        setPages(result.data);
+        console.log(currentPage + 1);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [currentPage]);
+
+  return {
+    pages,
+    totalData,
+    currentPage,
+    setCurrentPage,
+  };
+};
+
+export default PaginatedData;

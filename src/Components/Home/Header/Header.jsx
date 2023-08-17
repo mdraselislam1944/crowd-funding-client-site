@@ -77,14 +77,14 @@ const Header = () => {
                 </a>
               </li>
               <li className=" pl-0 lg:my-0 " data-te-nav-item-ref>
-                <a
+                <Link
                   className=" transition duration-200 hover:text-neutral-200 hover:ease-in-out focus:text-neutral-200 disabled:text-black/30 motion-reduce:transition-none lg:mx-1 pb-2 [&.active]:text-black/90 [&.active]:text-neutral-200 [&.active]:border-b-2 [&.active]:border-[#F99F24] hover:border-b-[3px] hover:border-[#F99F24]"
                   aria-current="page"
-                  href="#"
+                  to="/campaigns"
                   data-te-nav-link-ref
                 >
                   Campaigns
-                </a>
+                </Link>
               </li>
               <li className=" pl-0 lg:my-0 " data-te-nav-item-ref>
                 <a

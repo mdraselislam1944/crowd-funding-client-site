@@ -7,6 +7,7 @@ import Contact from "../Contact/Contact";
 
 import Donate from "../Payment/Donate";
 import Payment from "../Payment/Payment";
+import Campaigns from "../Campaigns/Campaigns";
 
 const Router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const Router = createBrowserRouter([
         {
           path:"/donate",
           element:<Donate/>
+        },
+        {
+          path: "/campaigns",
+          element: <Campaigns/>
         }
 
       ]
