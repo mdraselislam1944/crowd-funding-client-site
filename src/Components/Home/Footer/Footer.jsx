@@ -50,8 +50,20 @@ const Footer = () => {
 
 
             {/* copyright and social  */}
-            <div>
-                <p className='mt-7'>© 2019. UniAid all Rights Reserved</p>
+
+         
+            <div className='flex justify-between mt-10 items-center'>
+                <div>
+                    <p>Copyright © 2023. UniAid all Rights Reserved</p>
+                </div>
+
+                {/* social icons  */}
+                <div className='flex gap-2 text-3xl'>
+                    <FaFacebook />
+                    <FaInstagram />
+                    <FaTwitter />
+                    <FaYoutube />
+                </div>
             </div>
         </div>
 

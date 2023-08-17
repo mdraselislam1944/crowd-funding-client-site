@@ -9,6 +9,7 @@ import slide3 from "../../../assets/img/banner/qasim-sadiq-MUlE4pw78Ec-unsplash-
 
 import { Keyboard, Pagination, Navigation } from "swiper/modules";
 import logo from "../../../assets/img/logo-main/Orange_Black_Hummingbird_Tech_Digital_Bird_Logo__1_-removebg-preview.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -19,12 +20,12 @@ const Header = () => {
             <img src={logo} className="h-8 mr-3" alt="Flowbite Logo" />
           </a>
           <div className="flex md:order-2">
-            <button
+            <Link to="/donate"
               type="button"
               className="text-white font-[700] text-xl h-12 w-40 bg-[#F99F24] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Donate Now
-            </button>
+            </Link>
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"

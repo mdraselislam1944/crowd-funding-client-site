@@ -3,10 +3,10 @@ import Partners from "../Home/Partners/Partners";
 
 const AboutUs = () => {
     return (
-        <div>
+        <div className="max-w-7xl mx-auto">
             <section>
 
-<div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 p-3 lg:text-left md:text-left text-center ">
+          <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 p-3 lg:text-left md:text-left text-center ">
     <div>
         <img src="https://c4.wallpaperflare.com/wallpaper/133/969/139/artwork-nature-landscape-fantasy-art-wallpaper-thumb.jpg" alt="" />
     </div>
