@@ -7,7 +7,7 @@ import Header from "../Components/Home/Header/Header";
 const Main = () => {
     return (
         <div className="">
-            <Header></Header>
+            {/* <Header></Header> */}
             <Outlet></Outlet>
             <Footer></Footer>
         </div>
