@@ -5,7 +5,7 @@ import img2 from '../../../assets/images/about-2.png';
 const About = () => {
   return (
     <div>
-   
+      <Link to="/login"><button className='btn btn-success'>Login</button></Link>
       <div className="text-center mt-8">
         <h2 className="text-3xl font-bold">About Us</h2>
         <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />

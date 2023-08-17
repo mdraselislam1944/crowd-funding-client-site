@@ -8,6 +8,8 @@ import Contact from "../Contact/Contact";
 import Donate from "../Payment/Donate";
 import Payment from "../Payment/Payment";
 import Campaigns from "../Campaigns/Campaigns";
+import Login from "../Login/Login";
+import SignUp from "../SignUP/SignUp";
 
 const Router = createBrowserRouter([
     {
@@ -39,6 +41,14 @@ const Router = createBrowserRouter([
         {
           path: "/campaigns",
           element: <Campaigns/>
+        },
+        {
+          path: "/login",
+          element: <Login></Login>
+        },
+        {
+          path: "/signUp",
+          element: <SignUp></SignUp>
         }
 
       ]
