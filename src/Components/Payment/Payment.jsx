@@ -1,5 +1,5 @@
 import { stringify } from 'postcss';
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CheckOut from './CheckOut';
 import { loadStripe } from '@stripe/stripe-js';
