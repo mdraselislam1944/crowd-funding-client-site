@@ -4,6 +4,7 @@ import Home from "../Home/Home";
 import AboutUs from "../AboutUS/AboutUS";
 import Donate from "../Payment/Donate";
 import Payment from "../Payment/Payment";
+import Campaigns from "../Campaigns/Campaigns";
 
 const Router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const Router = createBrowserRouter([
         {
           path:"/donate",
           element:<Donate/>
+        },
+        {
+          path: "/campaigns",
+          element: <Campaigns/>
         }
       ]
     },

@@ -14,8 +14,8 @@ const About = () => {
 
           <div>
             <img src={img1} alt="" className="w-80" />
-            <img src={img2} alt="" className="w-72 absolute -bottom-14 right-12 border hidden md:block" />
-            <div className="w-[70px] h-[60px] bg-[#F99F24] absolute top-20 right-28 hidden md:block"></div>
+            <img src={img2} alt="" className="w-72 absolute -bottom-14 right-4 border hidden md:block" />
+            <div className="w-[70px] h-[60px] bg-[#F99F24] absolute top-20 right-16 hidden md:block"></div>
           </div>
         </div>
 
@@ -26,7 +26,7 @@ const About = () => {
             <p>We are the dreamers who dream to make the world a better home.</p>
             <p>We are the dreamers who dream to make the world a better home.</p>
           </div>
-          <button className="mt-4 px-4 py-2 bg-[#F99F24] text-white font-semibold shadow-2xl hover:bg-[#fd9400]">See More</button>
+          <button className="mt-4 px-4 py-2 bg-[#F99F24] text-white font-semibold shadow-2xl hover:bg-[#fd9400] rounded">See More</button>
         </div>
       </div>
  
