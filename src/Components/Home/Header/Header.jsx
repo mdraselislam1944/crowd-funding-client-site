@@ -15,7 +15,7 @@ const Header = () => {
     <div className="bg-gradient-to-r w-full from-[#03387B] to-[#048F87]">
       <nav className="max-w-7xl fixed  mt-5 mx-auto px-48 w-full z-20 top-0  bg-gradient-to-r from-[#03387B] to-[#048F87]">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="https://flowbite.com/" className="flex items-center">
+          <a href="/" className="flex items-center">
             <img src={logo} className="h-8 mr-3" alt="Flowbite Logo" />
           </a>
           <div className="flex md:order-2">

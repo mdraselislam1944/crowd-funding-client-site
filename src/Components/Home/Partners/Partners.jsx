@@ -8,7 +8,7 @@ import brand12 from '../../../assets/img/partner-logos/brand-12.png'
 
 const Partners = () => {
     return (
-        <div>
+        <div className='max-w-7xl mx-auto'>
             <div className="text-center mt-16">
                 <h2 className="text-3xl font-bold">Who Work With Us</h2>
                 <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
