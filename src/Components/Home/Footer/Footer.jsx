@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <div className='bg-gradient-to-r mt-10 from-[#03387B] to-[#048F87] ... text-white px-10 py-5'>
+        <div className='bg-gradient-to-r mt-10 bg-neutral text-white py-5'>
             <footer className="footer max-w-7xl mx-auto">
                 <div>
                     <img className='w-56' src={logo}></img>
@@ -28,20 +28,30 @@ const Footer = () => {
                 </div>
                 <div>
                     <span className="footer-title">Support Forum</span>
-                    <div className="form-control w-80">
+                    <div className="form-control">
                         <label className="label">
                             <span className="label-text text-white">Write your email into below field and <br></br> join our quick support forum.</span>
                         </label>
                         <div className="">
-                            <input type="text" placeholder="username@site.com" className="input input-bordered w-full pr-16" />
+                            <input className="border-2 border-black rounded w-[230px] px-2 py-2" type="email" name="email" placeholder="username@site.com"></input>
+                            <br></br>
                             <button className="btn btn-warning text-white mt-1">Subscribe</button>
                         </div>
+                    </div>
+                    {/* social icons  */}
+                    <div className='flex gap-2 text-2xl mt-5'>
+                        <FaFacebook />
+                        <FaInstagram />
+                        <FaTwitter />
+                        <FaYoutube />
                     </div>
                 </div>
             </footer>
 
 
             {/* copyright and social  */}
+
+         
             <div className='flex justify-between mt-10 items-center'>
                 <div>
                     <p>Copyright © 2023. UniAid all Rights Reserved</p>
@@ -56,6 +66,7 @@ const Footer = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 
