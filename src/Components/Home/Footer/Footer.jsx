@@ -44,7 +44,7 @@ const Footer = () => {
             {/* copyright and social  */}
             <div className='flex justify-between mt-10 items-center'>
                 <div>
-                    <p>Copyright © 2019. UniAid all Rights Reserved</p>
+                    <p>Copyright © 2023. UniAid all Rights Reserved</p>
                 </div>
 
                 {/* social icons  */}
