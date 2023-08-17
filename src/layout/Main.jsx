@@ -1,6 +1,5 @@
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import Footer from "../Components/Home/Footer/Footer";
-import Header from "../Components/Home/Header/Header";
 
 
 
