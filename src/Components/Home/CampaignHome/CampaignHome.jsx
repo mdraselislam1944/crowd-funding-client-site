@@ -2,7 +2,7 @@ import image from "../../../assets/img/others img/mohammed-ibrahim-jrcvHflmKvg-u
 
 
 
-const Campaign = () => {
+const CampaignHome = () => {
     return (
         <div className="bg-[#EEF7FF] p-6">
             <h1 className="text-center text-3xl font-bold pt-5 mb-3">Feature Campaigns</h1>
@@ -63,4 +63,4 @@ const Campaign = () => {
     );
 };
 
-export default Campaign;
+export default CampaignHome;

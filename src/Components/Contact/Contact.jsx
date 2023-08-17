@@ -19,10 +19,9 @@ const Contact = () => {
                     titleHead="Get connected now"
                     titleDes={
                         <>
-                            We are a worldwide ministry in <br />
-                            which millions of children reap the <br />
-                            benefits of one man’s clear vision and <br />
-                            inspired effort.
+                        We are a worldwide ministry in which  <br/>millions of children reap the benefits  <br/>of one man’s clear
+
+
                         </>
                     }
                 ></SharedBanner> 

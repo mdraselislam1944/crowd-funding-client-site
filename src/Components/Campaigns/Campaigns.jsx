@@ -5,6 +5,8 @@ import { BsSearch } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Pagination from './Pagination';
 import FetchData from "./FetchData";
+import SharedBanner from "../Contact/SharedBanner";
+import campaignPhoto from "../../assets/img/section-banner/melanie-lim-SkMBbB9gjQc-unsplash.jpg"
 
 const Campaigns = () => {
     const { pages, setCurrentPage } = FetchData();
@@ -23,14 +25,24 @@ const Campaigns = () => {
     }, [searchText, pages]);
 
     return (
-        <div className="max-w-7xl mx-auto my-16 ">
+        <div className="max-w-7xl mx-auto  ">
+             <SharedBanner
+                background={campaignPhoto}
+                title="Campaigns "
+                titleHead="Our on going campaigns"
+                titleDes={
+                    <>
+                    We have launched several event to help the refugee people from Lebanon and Syria.
+                    </>
+                }
+            ></SharedBanner>
             <div className="mb-6 relative w-10/12 mx-auto md:w-[20%]">
                 <input
                     type="text"
                     placeholder="Search Here..."
                     value={searchText}
                     onChange={e => setSearchText(e.target.value)}
-                    className="w-full px-4 py-2 border border-black rounded-md"
+                    className="w-full px-4 py-2 mt-3  border border-black rounded-md"
                 />
                 <BsSearch className="absolute top-[30%] right-6 text-gray-500" />
             </div>
@@ -45,7 +57,7 @@ const Campaigns = () => {
                             </figure>
                             <div className="card-body">
                                 <div className="flex items-center justify-between">
-                                    <progress className="progress progress-info w-56" value={progress} max="100"></progress>
+                                    <progress className="progress progress-warning w-56" value={progress} max="100"></progress>
                                     <span className="text-gray-600">{date}</span>
                                 </div>
                                 <h2 className="card-title pt-2">{header}</h2>
