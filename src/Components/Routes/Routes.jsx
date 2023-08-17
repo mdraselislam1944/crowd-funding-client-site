@@ -26,7 +26,7 @@ const Router = createBrowserRouter([
           path: '/contact',
           element: <Contact></Contact>
         },
-
+        {
           path:"/donatePayment/:id",
           element:<Payment/>,
           loader:({params})=>fetch(`http://localhost:5000/saveAddress/${params.id}`),
