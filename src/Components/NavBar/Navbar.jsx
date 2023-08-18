@@ -1,6 +1,7 @@
-import {  useState } from "react";
+import {  useContext, useState } from "react";
 import logo from "../../assets/img/logo-main/Orange_Black_Hummingbird_Tech_Digital_Bird_Logo__1_-removebg-preview.png";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 const Navbar = () => {
   const [colorChange, setColorchange] = useState(false);
   const changeNavbarColor = () => {
@@ -11,6 +12,16 @@ const Navbar = () => {
     }
   };
   window.addEventListener("scroll", changeNavbarColor);
+  const {user, logOut}=useContext(AuthContext);
+  const handleLogout = () => {
+    logOut()
+      .then(res => res.json())
+      .catch(error => {
+        localStorage.removeItem('set-token-for-user');
+        alert("Logout Successfully")
+      })
+
+  }
   return (
     <nav
       className={
@@ -24,14 +35,19 @@ const Navbar = () => {
           <img src={logo} className="h-8 mr-3" alt="" />
         </a>
         <div className="flex md:order-2">
-         <Link to="/login">
-         <button
-            type="button"
-            className="text-white bg-[#F99F24] hover:bg-[#F99F24] focus:ring-4 focus:outline-none focus:ring-[#F99F24] font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-[#F99F24] dark:hover:bg-[#F99F24] dark:focus:ring-[#F99F24] "
-          >
-            Login
-          </button>
-         </Link>
+        {
+          user ? 
+          <Link><button className='mx-10 btn btn-success' onClick={handleLogout}>logUot</button></Link>
+          :
+          <Link to="/login">
+          <button
+             type="button"
+             className="text-white bg-[#F99F24] hover:bg-[#F99F24] focus:ring-4 focus:outline-none focus:ring-[#F99F24] font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-[#F99F24] dark:hover:bg-[#F99F24] dark:focus:ring-[#F99F24] "
+           >
+             Login
+           </button>
+          </Link>
+        }
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
