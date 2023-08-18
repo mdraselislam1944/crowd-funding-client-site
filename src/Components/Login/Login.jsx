@@ -69,35 +69,35 @@ const Login = () => {
                         </p>
                     </div>
 
-                    <div className="card rounded-none flex-shrink-0 max-w-sm shadow-2xl pt-3">
+                    <div className="card rounded-none flex-shrink-0 max-w-sm shadow-2xl">
                         <video className='videoTag lg:mx-auto w-auto lg:hidden md:hidden block' autoPlay loop muted>
                             <source src={video} type='video/mp4' />
                         </video>
-                        <div className="card lg:m-0 md:m-0 m-5">
+                        <div className="card lg:m-0 md:m-0 m-5 ps-4 pe-4">
 
-                            <h1 className="text-3xl text-center font-bold bg-[#F99F24] rounded-lg p-1 text-black">Login</h1>
+                            <h1 className="text-2xl text-center font-bold bg-[#F99F24] rounded-lg p-1 text-white">Login</h1>
                             <form onSubmit={handleLogin} >
 
                                 <div className="form-control ">
                                     <label className="label">
                                         <span className="label-text font-bold text-xl lg:text-white md:text-white text-black">Email</span>
                                     </label>
-                                    <input type="email" name="email" placeholder="Email" className="input bg-transparent border-2 border-orange-300 text-black" />
+                                    <input type="email" name="email" placeholder="Email" className="input bg-transparent border-2 border-orange-300 lg:text-white md:text-white text-black" />
                                 </div>
                                 <div className="form-control text-white">
                                     <label className="label">
                                         <span className="label-text font-bold text-xl lg:text-white md:text-white text-black">Password</span>
                                     </label>
-                                    <input type="password" name="password" placeholder="password" className="input bg-transparent border-2 border-orange-300 text-black" />
+                                    <input type="password" name="password" placeholder="password" className="input bg-transparent border-2 border-orange-300 lg:text-white md:text-white text-black" />
                                     <label className="label">
                                         <a href="#" className="label-text-alt link link-hover text-[#F99F24]">Forgot password?</a>
                                     </label>
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button className="btn bg-transparent border-2 border-orange-300 lg:text-white md:text-white text-black  hover:bg-[#F99F24] hover:border-none hover:text-black" type='submit' value="Login">Login</button>
+                                    <button className="btn bg-transparent border-2 border-orange-300 lg:text-white md:text-white text-black  hover:bg-[#F99F24] hover:border-none hover:text-black lg:font-semibold md:font-semibold font-extrabold  lg:text-base md:text-base text-lg" type='submit' value="Login">Login</button>
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button onClick={handleGoogleSignIn} className="btn bg-transparent border-2 border-orange-300 lg:text-white md:text-white text-black hover:bg-[#F99F24] hover:border-none hover:text-black" type='submit' value="Login"><span className="mr-2 bg-white rounded-full p-1"><FcGoogle /></span> Google</button>
+                                    <button onClick={handleGoogleSignIn} className="btn bg-transparent border-2 border-orange-300 lg:text-white md:text-white text-black hover:bg-[#F99F24] hover:border-none hover:text-black lg:font-semibold md:font-semibold font-extrabold lg:text-base md:text-base text-lg" type='submit' value="Login"><span className="mr-2 bg-white rounded-full"><FcGoogle /></span> Google</button>
                                 </div>
                             </form>
 

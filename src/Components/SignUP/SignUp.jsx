@@ -32,21 +32,21 @@ const SignUp = () => {
        <video className='videoTag  lg:mx-auto w-auto lg:block md:block hidden' autoPlay loop muted>
                 <source src={video1} type='video/mp4' />
             </video>
-      <div className="hero-content  flex-col lg:flex-row ">
+      <div className="hero-content p-0 flex-none lg:flex-row ">
         
         <div className="card flex-shrink-0 max-w-sm shadow-2xl">
         <video className='videoTag lg:mx-auto w-auto lg:hidden md:hidden block' autoPlay loop muted>
                             <source src={video1} type='video/mp4' />
                         </video>
-          <div className="card p-4  ">
+          <div className="card lg:m-0 md:m-0 m-5 ps-4 pe-4">
 
-            <h1 className="text-3xl text-center font-bold bg-[#F99F24] rounded-lg p-1 text-black">Sign Up</h1>
+            <h1 className="text-2xl text-center font-bold bg-[#F99F24] rounded-lg p-1 text-white">Sign Up</h1>
             <form onSubmit={handleSignUP} >
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-bold text-xl lg:text-white md:text-white text-black">Name</span>
                 </label>
-                <input type="text" name="name" placeholder="name" className="input bg-transparent border-2 border-orange-300 text-black" />
+                <input type="text" name="name" placeholder="name" className="input bg-transparent border-2 border-orange-300 lg:text-white md:text-white text-black" />
               </div>
               {/* <div className="form-control">
                 <label className="label">
@@ -58,13 +58,13 @@ const SignUp = () => {
                 <label className="label">
                   <span className="label-text font-bold text-xl lg:text-white md:text-white text-black">Email</span>
                 </label>
-                <input type="email" name="email" placeholder="enter email" className="input bg-transparent border-2 border-orange-300 text-black" />
+                <input type="email" name="email" placeholder="enter email" className="input bg-transparent border-2 border-orange-300 lg:text-white md:text-white text-black" />
               </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-bold text-xl lg:text-white md:text-white text-black"> Password</span>
                 </label>
-                <input type="password" name="password" placeholder="password" className="input bg-transparent border-2 border-orange-300 text-black" />
+                <input type="password" name="password" placeholder="password" className="input bg-transparent border-2 border-orange-300 lg:text-white md:text-white text-black" />
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover text-white">Forgot password?</a>
                 </label>
@@ -73,14 +73,14 @@ const SignUp = () => {
 
 
               <div className="form-control mt-1">
-                <button className="btn bg-transparent border-2 border-orange-300 lg:text-white md:text-white text-black  hover:bg-[#F99F24] hover:border-none hover:text-black" type='submit' value="Sign Up">Sign Up</button>
+                <button className="btn bg-transparent border-2 border-orange-300 lg:text-white md:text-white text-black  hover:bg-[#F99F24] hover:border-none hover:text-black lg:font-semibold md:font-semibold font-extrabold  lg:text-base md:text-base text-lg" type='submit' value="Sign Up">Sign Up</button>
               </div>
 
             </form>
-            <p className='my-4 text-center text-white'>Already Have an Account ? : <Link className="font-bold   text-[#F99F24]" to="/login">Login</Link></p>
+            <p className='my-4 text-center lg:text-white md:text-white text-black'>Already Have an Account ? : <Link className="font-bold   text-[#F99F24]" to="/login">Login</Link></p>
           </div>
         </div>
-        <div className="text-center text-white font-black lg:text-left w-1/2 mr-12 lg:block md:hidden hidden">
+        <div className="text-center text-white font-black lg:text-left w-1/2 mr-12 lg:block md:hidden hidden ps-5">
                     <h1 className="font-black text-3xl"><span className="text-[#F99F24] text-4xl">CrowdFunding</span> - All You Need To Know</h1>
                     <br></br><br />
                     <p className="">It sounds simple, but exactly how does crowdfunding look in practice? Well, sometimes crowdfunding campaigns seek financing in the form of donations or investments, but that’s not always the case.
