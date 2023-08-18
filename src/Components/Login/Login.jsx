@@ -23,7 +23,7 @@ const Login = () => {
                 Swal.fire({
                     position: 'top-center',
                     icon: 'success',
-                    iconColor:'#F99F24',
+                    iconColor: '#F99F24',
                     color: '#F99F24',
                     background: 'black',
                     title: 'Login Successful',
@@ -31,6 +31,23 @@ const Login = () => {
                     timer: 1500
                 })
                 console.log(user);
+
+                // ---------------------------jwt add----------------------
+
+                fetch('http://localhost:5000/jwt', {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                    .then(res => res.json())
+                    .then(result => {
+                        // console.log(result);
+                        localStorage.setItem('set-token-for-user', result.token)
+                    })
+
+
                 form.reset();
                 navigate(from, { replace: true });
             })
@@ -49,8 +66,30 @@ const Login = () => {
             .then(result => {
                 const loggedInUser = result.user;
                 setSuccess('Google Successfully');
-                console.log(user);
+                console.log(loggedInUser);
                 setUser(loggedInUser);
+
+
+
+                // ---------------------------jwt add for google signIn----------------------
+
+
+
+                fetch('http://localhost:5000/jwt', {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(loggedInUser)
+                })
+                    .then(res => res.json())
+                    .then(result => {
+                        // console.log(result);
+                        localStorage.setItem('set-token-for-user', result.token)
+                    })
+
+
+
                 navigate(from, { replace: true });
             })
             .catch(error => {
