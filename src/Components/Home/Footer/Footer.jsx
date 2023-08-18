@@ -8,7 +8,7 @@ const Footer = () => {
                 <div>
                     <img className='w-56' src={logo}></img>
                     <p>Duis elementum sapien et neque<br></br> lobortis laoreet.  Pellentesque<br></br> habitant morbi tristique senectus<br></br> et netus et malesuada</p>
-                    <button className="btn btn-warning text-white mt-1">Explore more</button>
+                    <button className="btn border-none bg-[#F99F24] text-white mt-1">Explore more</button>
                 </div>
                 <div>
                     <span className="footer-title">Category</span>
@@ -35,7 +35,7 @@ const Footer = () => {
                         <div className="">
                             <input className="border-2 border-black rounded w-[230px] px-2 py-2" type="email" name="email" placeholder="username@site.com"></input>
                             <br></br>
-                            <button className="btn btn-warning text-white mt-1">Subscribe</button>
+                            <button className="btn bg-[#F99F24] border-none text-white mt-1">Subscribe</button>
                         </div>
                     </div>
                     {/* social icons  */}
