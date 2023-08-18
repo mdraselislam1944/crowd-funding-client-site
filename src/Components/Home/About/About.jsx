@@ -1,24 +1,24 @@
 import { Link } from 'react-router-dom';
 import img1 from '../../../assets/images/about-1.png';
 import img2 from '../../../assets/images/about-2.png';
-import { useContext } from 'react';
-import { AuthContext } from '../../../Providers/AuthProvider';
+// import { useContext } from 'react';
+// import { AuthContext } from '../../../Providers/AuthProvider';
 
 const About = () => {
-  const {logOut}=useContext(AuthContext);
-  const handleLogout = () => {
-    logOut()
-      .then(res => res.json())
-      .catch(error => {
-        localStorage.removeItem('set-token-for-user');
-        alert("Logout Successfully")
-      })
+  // const {logOut}=useContext(AuthContext);
+  // const handleLogout = () => {
+  //   logOut()
+  //     .then(res => res.json())
+  //     .catch(error => {
+  //       localStorage.removeItem('set-token-for-user');
+  //       alert("Logout Successfully")
+  //     })
 
-  }
+  // }
   return (
     <div>
-      <Link to="/login"><button className='btn btn-success'>Login</button></Link>
-      <button className='mx-10 btn btn-success' onClick={handleLogout}>logUot</button>
+      {/* <Link to="/login"><button className='btn btn-success'>Login</button></Link>
+      <button className='mx-10 btn btn-success' onClick={handleLogout}>logUot</button> */}
       <div className="text-center mt-8">
         <h2 className="text-3xl font-bold">About Us</h2>
         <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
