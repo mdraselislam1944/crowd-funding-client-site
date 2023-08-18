@@ -1,5 +1,5 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import { useContext, useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import swal from 'sweetalert';
 import jsPDF from 'jspdf';
@@ -161,7 +161,7 @@ const CheckOut = ({ price, name }) => {
 
 
     return (
-        <>
+        <div>
             <form className='w-2/3 m-10' onSubmit={handleSubmit}>
                 <CardElement
                     options={{
@@ -179,7 +179,7 @@ const CheckOut = ({ price, name }) => {
                         },
                     }}
                 />
-                <button className='mt-5 btn btn-outline btn-primary' type="submit" disabled={!stripe}>
+                <button className='mt-5 ps-9 pr-9 btn bg-[#F99F24]' type="submit" disabled={!stripe}>
                     Pay
                 </button>
             </form>
@@ -188,10 +188,10 @@ const CheckOut = ({ price, name }) => {
             }
             <div className='text-center my-5'>
                 {
-                    download ? <button onClick={generatePDF} className='btn btn-secondary'>Download Payment PDF</button> : <button disabled className='btn btn-secondary'>Download Payment</button>
+                    download ? <button onClick={generatePDF} className='btn bg-[#F99F24] text-white'>Download Payment PDF</button> : <button disabled className='btn bg-[#F99F24]'>Download Payment</button>
                 }
             </div>
-        </>
+        </div>
     );
 };
 
