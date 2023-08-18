@@ -1,6 +1,6 @@
 
 import About from "./About/About";
-import Campaign from "./Campaign/Campaign";
+import Campaign from "./CampaignHome/CampaignHome";
 import Category from "./Category/Category";
 import News from "./News/News";
 import Success from "./Success/Success";
@@ -11,11 +11,12 @@ import Header from "./Header/Header";
 const Home = () => {
    
     return (
-      <div>
+      <div className="max-w-7xl mx-auto">
        <Header></Header>
         <About></About>
         <Campaign></Campaign>
         <Category></Category>
+        
         <Animation></Animation>
         <Success></Success>
         <News></News>

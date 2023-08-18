@@ -13,7 +13,7 @@ const Success = () => {
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 lg:m-2 md:m-2 m-8">
                 <div className="card  bg-base-100 shadow-xl">
                     <figure><img src={img1} alt="Shoes" />
-                    <h4 className="absolute top-0 right-0 rounded-2xl bg-cyan-300 p-2 fond-black">On going</h4>
+                    <h4 className="absolute top-0 right-0 rounded-2xl bg-cyan-300 p-2 mr-2 mt-2 font-black ">On going</h4>
                     </figure>
                   
                     <div className="card-body">
@@ -40,7 +40,7 @@ const Success = () => {
                 </div>
                 <div className="card  bg-base-100 shadow-xl">
                     <figure><img src={img2} alt="Shoes" />
-                    <h4 className="absolute top-0 right-0 rounded-2xl bg-green-400 p-2 fond-black"> Successful</h4>
+                    <h4 className="absolute top-0 right-0 rounded-2xl bg-green-400 p-2  mr-2 mt-2 font-black "> Successful</h4>
                     </figure>
                   
                     <div className="card-body">
@@ -68,7 +68,7 @@ const Success = () => {
                 </div>
                 <div className="card  bg-base-100 shadow-xl">
                     <figure><img src={img3} alt="Shoes" />
-                    <h4 className="absolute top-0 right-0 rounded-2xl bg-red-400 p-2 fond-black"> Unsuccessful</h4>
+                    <h4 className="absolute top-0 right-0 rounded-2xl bg-red-400 p-2 mr-2 mt-2 font-black "> Unsuccessful</h4>
                     </figure>
                   
                     <div className="card-body">
