@@ -19,7 +19,7 @@ const Donate = () => {
             price:form.payment.value,
             message:form.message.value,
         }
-        fetch("http://localhost:5000/saveAddress",{
+        fetch("https://crowdfunding-gamma.vercel.app/saveAddress",{
             method:"POST",
            headers: {
             "content-type":"application/json",

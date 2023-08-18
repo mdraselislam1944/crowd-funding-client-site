@@ -33,7 +33,7 @@ const Router = createBrowserRouter([
         {
           path:"/donatePayment/:id",
           element:<Payment/>,
-          loader:({params})=>fetch(`http://localhost:5000/saveAddress/${params.id}`),
+          loader:({params})=>fetch(`https://crowdfunding-gamma.vercel.app/saveAddress/${params.id}`),
         },
         {
           path:"/donate",

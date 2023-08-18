@@ -34,7 +34,7 @@ const Login = () => {
 
                 // ---------------------------jwt add----------------------
 
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://crowdfunding-gamma.vercel.app/jwt', {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'
@@ -75,7 +75,7 @@ const Login = () => {
 
 
 
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://crowdfunding-gamma.vercel.app/jwt', {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'
