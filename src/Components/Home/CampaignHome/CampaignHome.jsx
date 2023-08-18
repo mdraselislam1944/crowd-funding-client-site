@@ -57,7 +57,7 @@ const CampaignHome = () => {
                             </div>
                         </div>
                         <Link to="/donate">
-                        <button className="btn btn-warning mt-1">Donate Now</button>
+                        <button className="btn bg-[#F99F24] text-white mt-1">Donate Now</button>
                         </Link>
                     </div>
                 </div>

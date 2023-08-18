@@ -16,6 +16,7 @@ import slide10 from "../../../assets/img/Final/10.jpg";
 // import slide15 from "../../../assets/img/Final/15.jpg";
 import slide20 from "../../../assets/img/Final/20.jpg";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -158,18 +159,24 @@ const Header = () => {
                   Join The Journey <br /> From Idea To Market
                 </h1>
                 <div className=" md:mt-0 lg:mt-0">
+                  <Link to="/contact">
                   <button
                     type="button"
                     className="text-white mt-8 font-semibold text-xl h-14 w-48 bg-[#F99F24] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 px-4 tracking-wider text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
                     Start a Project
                   </button>
+                  </Link>
+                  <Link to="/donate">
                   <button
                     type="button"
                     className="button-sm ml-5 mt-8  text-xl font-semibold h-14 w-48 bg-white text-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 px-4 tracking-wider text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
-                    See More
+                    Donate Now
                   </button>
+                  </Link>
+                 
+                 
                 </div>
               </div>
             </div>

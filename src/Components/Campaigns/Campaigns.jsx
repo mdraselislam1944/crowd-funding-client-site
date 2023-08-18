@@ -28,7 +28,7 @@ const Campaigns = () => {
 
         
             
-        <div className="max-w-7xl mx-auto  ">
+        <div className="max-w-7xl mx-auto ">
              <SharedBanner
                 background={campaignPhoto}
                 title="Campaigns "

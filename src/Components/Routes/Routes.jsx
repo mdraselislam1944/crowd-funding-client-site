@@ -10,6 +10,7 @@ import Payment from "../Payment/Payment";
 import Campaigns from "../Campaigns/Campaigns";
 import Login from "../Login/Login";
 import SignUp from "../SignUP/SignUp";
+import Events from "../Events/Events";
 
 const Router = createBrowserRouter([
     {
@@ -41,6 +42,10 @@ const Router = createBrowserRouter([
         {
           path: "/campaigns",
           element: <Campaigns/>
+        },
+        {
+          path: "/event",
+          element: <Events></Events>
         },
         {
           path: "/login",
