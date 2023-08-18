@@ -16,6 +16,7 @@ const Home = () => {
         <About></About>
         <Campaign></Campaign>
         <Category></Category>
+        
         <Animation></Animation>
         <Success></Success>
         <News></News>
