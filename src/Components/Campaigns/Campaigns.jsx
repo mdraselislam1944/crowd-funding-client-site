@@ -1,7 +1,7 @@
 
 const Campaigns = () => {
     return (
-        <div>
+        <div className="">
             
         </div>
     );
