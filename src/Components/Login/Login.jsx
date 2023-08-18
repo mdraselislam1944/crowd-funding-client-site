@@ -4,6 +4,7 @@ import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from "../../Providers/AuthProvider";
 import video from "../../assets/Video/348855346_6387300347996886_8348118468822906576_n.mp4"
+import Swal from "sweetalert2";
 const Login = () => {
     const auth = getAuth();
     const { signIn } = useContext(AuthContext);
@@ -19,7 +20,16 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
-                setSuccess('Login Successfully')
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    iconColor:'#F99F24',
+                    color: '#F99F24',
+                    background: 'black',
+                    title: 'Login Successful',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
                 console.log(user);
                 form.reset();
                 navigate(from, { replace: true });

@@ -1,9 +1,11 @@
 // import React from 'react';
 import { useContext, useEffect } from "react";
 // import img  from "../../assets/images/login/login.svg"
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from "../../Providers/AuthProvider";
 import video1 from "../../assets/Video/348855346_6387300347996886_8348118468822906576_n.mp4"
+import Swal from "sweetalert2";
+
 const SignUp = () => {
 
   const { createUser } = useContext(AuthContext);
@@ -20,10 +22,28 @@ const SignUp = () => {
       .then(result => {
         const user = result.user;
         console.log(user);
+      Swal.fire({
+        position: 'top-center',
+        icon: 'success',
+        iconColor:'#F99F24',
+        color:'#F99F24',
+        background:'black',
+        title: 'SignUp Successful',
+        showConfirmButton: false,
+        timer: 1500
+        })
         form.reset();
+        navigate(from, { replace: true });
       })
       .catch(error => console.log(error));
   }
+     //private route
+     const navigate = useNavigate();
+     const location = useLocation();
+     console.log(location);
+     const from = location.state?.from?.pathname || "/login";
+ 
+ 
   useEffect(() => {
     document.title = "Sign Up";
   }, [])
