@@ -26,7 +26,7 @@ const Campaigns = () => {
 
     return (
 
-        <div className="">
+        
             
         <div className="max-w-7xl mx-auto  ">
              <SharedBanner

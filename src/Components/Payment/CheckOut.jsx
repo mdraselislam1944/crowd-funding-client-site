@@ -162,8 +162,8 @@ const CheckOut = ({ price, name }) => {
 
     return (
         <div>
-            <form className='w-2/3 m-10' onSubmit={handleSubmit}>
-                <CardElement
+            <form className='text-center mt-9 lg:p-0 md:p-0 p-4 ' onSubmit={handleSubmit}>
+                <CardElement className=''
                     options={{
                         style: {
                             base: {

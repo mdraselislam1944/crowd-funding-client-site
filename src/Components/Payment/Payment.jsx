@@ -32,7 +32,7 @@ const Payment = () => {
                 <h2 className="text-3xl font-bold">Please Payment : ${tk}</h2>
                 <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
             </div>
-            <div className="">
+            <div className="max-w-xl mx-auto">
                 <Elements stripe={stripePromise}>
                     <CheckOut name={name} price={price}></CheckOut>
                 </Elements>
