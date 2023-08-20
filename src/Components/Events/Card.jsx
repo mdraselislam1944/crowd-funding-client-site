@@ -37,7 +37,7 @@ const Card = ({ item }) => {
                     </div>
                     
                     <Link to="/about">
-                        <button className="btn-xs rounded-full bg-[#F99F24]  text-black">Read More</button>
+                        <button className="btn-xs rounded-bl-full ps-3 rounded-tr-full bg-[#F99F24]  text-black">Read More</button>
                     </Link>
                 </div>
 
