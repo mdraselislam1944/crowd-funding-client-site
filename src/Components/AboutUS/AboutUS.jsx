@@ -3,7 +3,12 @@ import Partners from "../Home/Partners/Partners";
 import background from "../../assets/img/section-banner/about-section.jpg";
 import sectionImage from "../../assets/img/section-banner/contact-banner.jpg"
 import ocg from "../../assets/img/others img/ocg-saving-the-ocean-uXfYLTmF6fo-unsplash.jpg";
-
+import sajid from "../../../src/assets/img/OurTeam/sajid.jpg";
+import sakib from "../../../src/assets/img/OurTeam/sakib.jpg";
+import mahdi from "../../../src/assets/img/OurTeam/mahdi.jpg";
+import shahadat from "../../../src/assets/img/OurTeam/shahadat.jpg";
+import saroar from "../../../src/assets/img/OurTeam/saroar.jpg";
+import rasel from "../../../src/assets/img/OurTeam/rasel.jpg";
 
 const AboutUs = () => {
     return (
@@ -86,24 +91,24 @@ const AboutUs = () => {
                 <div className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-1 gap-7 mt-7">
                     <div className="md:hidden lg:block"></div>
                     <div className=" bg-gray-300">
-                        <img className="" src="/src/assets/img/OurTeam/sajid.jpg" alt="" />
+                        <img className="" src={sajid} alt="" />
                         <h2 className="text-xl font-bold text-center">Estiaque Ahmed</h2>
                         <p className="text-md text-center">Developer</p>
                     </div>
                     <div className=" bg-gray-300">
-                        <img src="/src/assets/img/OurTeam/sakib.jpg" alt="" />
+                        <img src={sakib} alt="" />
                         <img src="" alt="" />
                         <h2 className="text-xl font-bold text-center">Md. Sakib Mia</h2>
                         <p className="text-md text-center">Developer</p>
                     </div>
                     <div className=" bg-gray-300">
-                        <img src="/src/assets/img/OurTeam/mahdi.jpg" alt="" />
+                        <img src={mahdi} alt="" />
                         <img src="" alt="" />
                         <h2 className="text-xl font-bold text-center">Mahdi Mortuza</h2>
                         <p className="text-md text-center">Developer</p>
                     </div>
                     <div className=" bg-gray-300">
-                        <img src="/src/assets/img/OurTeam/shahadat.jpg" alt="" />
+                        <img src={shahadat} alt="" />
                         <img src="" alt="" />
                         <h2 className="text-xl font-bold text-center">Shahadat Hosan</h2>
                         <p className="text-md text-center">Developer</p>
@@ -112,13 +117,13 @@ const AboutUs = () => {
                     <div className="hidden lg:block md:hidden"></div>
                     <div className="hidden lg:block md:hidden"></div>
                     <div className=" bg-gray-300">
-                        <img src="/src/assets/img/OurTeam/saroar.jpg" alt="" />
+                        <img src={saroar} alt="" />
                         <img src="" alt="" />
                         <h2 className="text-xl font-bold text-center">Saroar Jahan</h2>
                         <p className="text-md text-center">Developer</p>
                     </div>
                     <div className=" bg-gray-300">
-                        <img src="/src/assets/img/OurTeam/rasel.jpg" alt="" />
+                        <img src={rasel} alt="" />
                         <img src="" alt="" />
                         <h2 className="text-xl font-bold text-center">Md. Rasel Islam</h2>
                         <p className="text-md text-center">Developer</p>
