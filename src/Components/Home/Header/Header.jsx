@@ -159,7 +159,7 @@ const Header = () => {
                   Join The Journey <br /> From Idea To Market
                 </h1>
                 <div className=" md:mt-0 lg:mt-0">
-                  <Link to="/contact">
+                  <Link to="/project">
                   <button
                     type="button"
                     className="text-white mt-8 font-semibold text-xl h-14 w-48 bg-[#F99F24] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 px-4 tracking-wider text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"

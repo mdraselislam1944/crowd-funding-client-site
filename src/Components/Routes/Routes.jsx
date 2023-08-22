@@ -11,6 +11,7 @@ import Campaigns from "../Campaigns/Campaigns";
 import Login from "../Login/Login";
 import SignUp from "../SignUP/SignUp";
 import Events from "../Events/Events";
+import Project from "../Project/Project";
 
 const Router = createBrowserRouter([
     {
@@ -54,6 +55,10 @@ const Router = createBrowserRouter([
         {
           path: "/signUp",
           element: <SignUp></SignUp>
+        },
+        {
+          path: "/Project",
+          element: <Project></Project>
         }
 
       ]
