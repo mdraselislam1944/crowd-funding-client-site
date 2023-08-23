@@ -1,67 +1,77 @@
-import {  useState } from "react";
+import { useState } from "react";
 import logo from "../../assets/img/logo-main/Orange_Black_Hummingbird_Tech_Digital_Bird_Logo__1_-removebg-preview.png"
 import { Link } from "react-router-dom";
 // import { AuthContext } from "../../Providers/AuthProvider";
 
 const Navbar = () => {
-  const user=0;
+  const user = 0;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleClose = () => setIsMenuOpen(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <nav className="bg-white px-7 md:px-0 text-black p-4 shadow font-poppins">
+    <nav className="bg-black md:bg-opacity-50 bg-opacity-90 px-7 md:px-0 text-white p-4 shadow font-poppins w-full fixed z-10">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <Link to="#" className="text-black text-lg font-semibold">
-           logo
+          <Link to="/">
+            <img src={logo} alt="" className="w-36" />
           </Link>
         </div>
         <div className="hidden md:flex items-center space-x-4 flex-grow">
           <ul className="flex space-x-4 md:space-x-10 lg:space-x-10 mx-auto">
             <li>
-              <a
-                href="#"
-                className="text-black hover:text-gray-300 transition-colors duration-300"
+              <Link to="/"
+                className="text-white hover:text-gray-300 transition-colors duration-300"
               >
                 Home
-              </a>
+              </Link>
             </li>
+
             <li>
-              <a
-                href="#"
-                className="text-black hover:text-gray-300 transition-colors duration-300"
+              <Link to="/event"
+                className="text-white hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
+              >
+                Events
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/campaigns"
+                className="text-white hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
+              >
+                Campaigns
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to='/about'
+                className="text-white hover:text-gray-300 transition-colors duration-300"
               >
                 About
-              </a>
+              </Link>
             </li>
+
             <li>
-              <a
-                href="#"
-                className="text-black hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="text-black hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
+              <Link to="/contact"
+                className="text-white hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
         <div className="hidden md:flex items-center">
-          <button className="bg-indigo-600 text-white rounded px-4 py-2 transition duration-300 hover:bg-indigo-300 hover:text-black">
+          <Link to="login" className="btn btn-outline border-yellow-600 text-white hover:text-yellow-600 rounded transition duration-300 hover:bg-inherit hover:border-yellow-600">
             Login
-          </button>
+          </Link>
         </div>
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-black focus:outline-none">
+          <Link onClick={toggleMenu} className="text-white focus:outline-none">
             <svg
               className="h-6 w-6"
               fill="none"
@@ -84,57 +94,66 @@ const Navbar = () => {
                 />
               )}
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
       {isMenuOpen && (
         <div className="md:hidden">
-          <ul className="mt-2 space-y-2">
+          <ul className="mt-6 space-y-4">
             <li>
-              <a
-                href="#"
-                className="block text-black hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
+              <Link to="/" onClick={handleClose}
+                className="text-white hover:text-gray-300 transition-colors duration-300"
               >
                 Home
-              </a>
+              </Link>
             </li>
+
             <li>
-              <a
-                href="#"
-                className="block text-black hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
+              <Link to="/event" onClick={handleClose}
+                className="text-white hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
+              >
+                Events
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/campaigns" onClick={handleClose}
+                className="text-white hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
+              >
+                Campaigns
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to='/about' onClick={handleClose}
+                className="text-white hover:text-gray-300 transition-colors duration-300"
               >
                 About
-              </a>
+              </Link>
             </li>
+
             <li>
-              <a
-                href="#"
-                className="block text-black hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block text-black hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
+              <Link to="/contact" onClick={handleClose}
+                className="text-white hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
-          
-          <Link><button className='mx-10 btn btn-success' onClick="">logOut</button></Link>
-         
-          <Link to="/login">
-          <button
-             to="/login"
-             className="btn text-white bg-[#F99F24] hover:bg-[#F99F24] focus:ring-4 focus:outline-none focus:ring-[#F99F24] font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-[#F99F24] dark:hover:bg-[#F99F24] dark:focus:ring-[#F99F24] "
-           >
-             Login
-           </button>
-          </Link>
-        
+          {
+            user ?
+              <Link><button className='mx-10 btn btn-success' onClick="">logOut</button></Link>
+              :
+              <Link to="/login">
+                <button
+                  type="button" onClick={handleClose}
+                  className="text-white border border-yellow-600 bg-inherit hover:bg-[#F99F24] focus:ring-4 focus:outline-none focus:ring-[#F99F24] font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 mt-6"
+                >
+                  Login
+                </button>
+              </Link>
+          }
         </div>
       )}
     </nav>
@@ -142,4 +161,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

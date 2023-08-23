@@ -12,6 +12,7 @@ import Login from "../Login/Login";
 import SignUp from "../SignUP/SignUp";
 import Events from "../Events/Events";
 import Project from "../Project/Project";
+import Info from "../Project/Info";
 
 const Router = createBrowserRouter([
     {
@@ -59,6 +60,10 @@ const Router = createBrowserRouter([
         {
           path: "/Project",
           element: <Project></Project>
+        },
+        {
+          path: "/form",
+          element: <Info></Info>
         }
 
       ]

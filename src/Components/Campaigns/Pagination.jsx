@@ -3,6 +3,11 @@ import ReactPaginate from 'react-paginate';
 const Pagination = ({ setCurrentPage, totalData }) => {
   const handlePageClick = ({ selected }) => {
     setCurrentPage(selected);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   };
 
   return (
