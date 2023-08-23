@@ -9,6 +9,8 @@ import FetchData from "./FetchData";
 import SharedBanner from "../Contact/SharedBanner";
 import campaignPhoto from "../../assets/img/section-banner/melanie-lim-SkMBbB9gjQc-unsplash.jpg";
 import { BarLoader } from "react-spinners";
+import bg from "../../assets/Video/wallpaperflare.com_wallpaper.jpg"
+
 
 const Campaigns = () => {
     const campaignsRef = useRef();
@@ -33,9 +35,9 @@ const Campaigns = () => {
             setIsLoading(false);
         }, 1000);
     }, [searchText, pages]);
-
+    //className="bg-cover bg-center bg-no-repeat  max-w-7xl mx-auto " style={{ backgroundImage: `url(${bg})` }}
     return (
-        <div className="max-w-7xl mx-auto" ref={campaignsRef}>
+        <div className="max-w-7xl mx-auto bg-cover bg-center bg-no-repeat " ref={campaignsRef} style={{ backgroundImage: `url(${bg})` }}>
             <SharedBanner
                 background={campaignPhoto}
                 title="Campaigns "
@@ -46,13 +48,18 @@ const Campaigns = () => {
                     </>
                 }
             ></SharedBanner>
-            <div className="mb-6 relative w-10/12 mx-auto md:w-[20%]">
+            <div className="text-center mt-8">
+                <h2 className="text-3xl text-white font-bold">Our All Country Campaigns</h2>
+                <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
+            </div>
+            <div className="mt-4 relative w-10/12 mx-auto md:w-[20%] ">
                 <input
                     type="text"
                     placeholder="Type Here..."
                     value={searchText}
                     onChange={e => setSearchText(e.target.value)}
-                    className="w-full px-4 py-2 mt-3  border border-black rounded-md"
+                    className="w-full px-4 py-2 mt-3  border border-black rounded-full text-black placeholder-black
+                    bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%"
                 />
                 <BsSearch className="absolute top-[46%] right-6 text-gray-500" />
             </div>
@@ -61,29 +68,29 @@ const Campaigns = () => {
                     <BarLoader />
                 </div>
             ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {filteredCampaigns?.map(({ _id, image, location, header, desc, date, progress }) => {
-                            return (
-                                <div key={_id} className="card card-compact md:w-96 w-11/12 mx-auto bg-base-100 shadow-xl group">
-                                    <figure>
-                                        <img src={image} alt="image" className="w-full h-60 group-hover:scale-105 duration-500 hover:duration-500" />
-                                        <span className="absolute text-white left-2 bottom-[58%] md:bottom-[52%] text-sm bg-black bg-opacity-50 rounded font-semibold flex items-center gap-2 px-1"><FaLocationDot /> {location}</span>
-                                    </figure>
-                                    <div className="card-body">
-                                        <div className="flex items-center justify-between">
-                                            <progress className="progress progress-warning w-56" value={progress} max="100"></progress>
-                                            <span className="text-gray-600">{date}</span>
-                                        </div>
-                                        <h2 className="card-title pt-2">{header}</h2>
-                                        <p>{desc}</p>
-                                        <div className="card-actions justify-end">
-                                            <Link to="/donate" className="px-3 py-2 bg-[#F99F24] text-white font-semibold shadow-2xl hover:bg-[#fd9400] rounded text-md">Donate Now</Link>
-                                        </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:p-12 md:p-12">
+                    {filteredCampaigns?.map(({ _id, image, location, header, desc, date, progress }) => {
+                        return (
+                            <div key={_id} className="card card-compact md:w-96 w-11/12 mx-auto bg-base-100 shadow-xl group">
+                                <figure>
+                                    <img src={image} alt="image" className="w-full h-60 group-hover:scale-105 duration-500 hover:duration-500" />
+                                    <span className="absolute text-white left-2 bottom-[58%] md:bottom-[52%] text-sm bg-black bg-opacity-50 rounded font-semibold flex items-center gap-2 px-1"><FaLocationDot /> {location}</span>
+                                </figure>
+                                <div className="card-body">
+                                    <div className="flex items-center justify-between">
+                                        <progress className="progress progress-warning w-56" value={progress} max="100"></progress>
+                                        <span className="text-gray-600">{date}</span>
+                                    </div>
+                                    <h2 className="card-title pt-2">{header}</h2>
+                                    <p>{desc}</p>
+                                    <div className="card-actions justify-end">
+                                        <Link to="/donate" className="px-3 py-2 bg-[#F99F24] text-white font-semibold shadow-2xl hover:bg-[#fd9400] rounded text-md">Donate Now</Link>
                                     </div>
                                 </div>
-                            );
-                        })}
-                    </div>
+                            </div>
+                        );
+                    })}
+                </div>
             )}
             <Pagination totalData={totalData} setCurrentPage={setCurrentPage} />
 

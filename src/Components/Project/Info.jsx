@@ -35,9 +35,13 @@ const Info = () => {
         }
       });
   };
+  //conic-gradient(rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0))
+  //bg-[conic-gradient(var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black
 
   return (
-    <div>
+    <div className="bg-gradient-to-bl from-gray-700 via-gray-900 to-black 
+    max-w-7xl mx-auto pb-8">
+      <div className="max-w-7xl mx-auto">
       <SharedBanner
         background={campaignPhoto}
         title="Projects"
@@ -47,10 +51,14 @@ const Info = () => {
             We will help you to start a new project or to collect funds for disasters.
           </>
         } />
-
-      <h2 className="pt-10 text-center text-xl md:text-3xl font-bold text-yellow-600">Submit Detail</h2>
-
-      <form className="card card-compact shadow-2xl p-10 max-w-7xl mx-auto w-11/12 text-base leading-6 space-y-6 sm:text-lg sm:leading-7 overflow-hidden mb-16 mt-8" onSubmit={handleSubmit}>
+      </div>
+      
+       <div className="text-center mt-8">
+        <h2 className="text-3xl text-white font-bold">Submit Detail</h2>
+        <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
+      </div>
+      
+      <form className="card card-compact shadow-2xl p-10 max-w-7xl mx-auto w-11/12 text-base leading-6 space-y-6 sm:text-lg sm:leading-7 overflow-hidden mb-16 mt-8 bg-white" onSubmit={handleSubmit}>
 
         <div className="relative">
           <input
@@ -160,7 +168,7 @@ const Info = () => {
         </div>
 
         <div className="text-center">
-          <button type="submit" className="px-3 py-1 border border-yellow-600 text-yellow-600 font-semibold hover:bg-yellow-700 hover:text-white cursor-pointer hover:scale-95 duration-300 hover:duration-300 rounded mt-4">
+          <button type="submit" className="px-3 w-1/2  py-1 border hover:border-[#F99F24] hover:text-white font-semibold bg-[#F99F24] text-black cursor-pointer hover:scale-95 duration-300 hover:duration-300 rounded-xl mt-4">
             Submit
           </button>
         </div>

@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 const Project = () => {
     return (
         <>
-            <SharedBanner
+           <div className="max-w-7xl mx-auto">
+           <SharedBanner
                 background={campaignPhoto}
                 title="Projects"
                 titleHead="Choose your project"
@@ -16,7 +17,8 @@ const Project = () => {
                         We will help you to start a new project or to collect funds for disasters.
                     </>
                 } />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 my-16">
+           </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 my-16 ">
                 {/* //two big card */}
                 <div className="flex flex-col items-end">
                     <div>
