@@ -123,19 +123,18 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-          {
-          user ? 
+          
           <Link><button className='mx-10 btn btn-success' onClick="">logOut</button></Link>
-          :
+         
           <Link to="/login">
           <button
-             type="button"
-             className="text-white bg-[#F99F24] hover:bg-[#F99F24] focus:ring-4 focus:outline-none focus:ring-[#F99F24] font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-[#F99F24] dark:hover:bg-[#F99F24] dark:focus:ring-[#F99F24] "
+             to="/login"
+             className="btn text-white bg-[#F99F24] hover:bg-[#F99F24] focus:ring-4 focus:outline-none focus:ring-[#F99F24] font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-[#F99F24] dark:hover:bg-[#F99F24] dark:focus:ring-[#F99F24] "
            >
              Login
            </button>
           </Link>
-        }
+        
         </div>
       )}
     </nav>
