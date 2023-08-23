@@ -58,7 +58,7 @@ const Donate = () => {
             <input type='number' name='number' className='input input-bordered w-full my-2 bg-white' placeholder='Enter your mobile number' required></input><br />
             <textarea rows="10" cols="50" name='address' className='input input-bordered w-full my-2' placeholder='Enter your address' required></textarea><br />
             <input type='number' name='payment' className='input input-bordered w-full my-2 bg-white' placeholder='Enter total payment dollars' required></input><br />
-            <textarea rows="10" cols="50" name='message' className='input input-bordered w-[89vw] my-2' placeholder='feedback for massage' ></textarea><br />
+            <textarea rows="10" cols="50" name='message' className='input input-bordered w-full my-2' placeholder='feedback for massage' ></textarea><br />
             {/* <Elements stripe={stripePromise}>
                 <CheckOut price={tk}></CheckOut>
             </Elements> */}
