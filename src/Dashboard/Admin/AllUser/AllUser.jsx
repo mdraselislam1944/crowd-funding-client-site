@@ -10,7 +10,7 @@ import {
 const AllUsers = () => {
     const [trHeight, setTrHeight] = useState("h-10");
   return (
-    <div className="bg-[#083149] px-10 mt w-full h-full mt-28 text-white">
+    <div className="bg-gradient-to-r from-black via-black to-black px-10 mt w-full h-full mt-28 text-white">
     <div className="flex items-center justify-between mt-5">
       <h1 className="text-5xl text-orange-300 normal-case font-semibold">
        All Users
@@ -45,7 +45,7 @@ const AllUsers = () => {
       <div className="flex items-center justify-center gap-5">
         {/* <p className='flex dropdown mb-32 items-center justify-center gap-2'><FaGripLinesVertical />Column</p> */}
         <details className="dropdown flex items-center justify-center gap-2">
-          <summary className="m-1 btn bg-[#083149] hover:bg-slate-500 hover:px-2 hover:rounded text-white border-none p-0 text-lg font-normal rounded-none">
+          <summary className="m-1 btn bg-[#083149] hover:bg-slate-500 hover:px-2 hover:rounded text-white border-none p-2 text-lg font-normal rounded-full">
             <FaGripLinesVertical />
             Column
           </summary>
@@ -63,7 +63,7 @@ const AllUsers = () => {
         </details>
         {/* <p className={`flex items-center justify-center gap-2`}><FaBars></FaBars>Density</p> */}
         <details className="dropdown">
-          <summary className="m-1 ml-0 btn border-none hover:bg-[#083149] text-white text-lg uppercase font-normal bg-[#083149]">
+          <summary className="m-1 ml-0 btn border-none hover:bg-[#083149] text-white text-lg uppercase font-normal bg-black">
             <FaBars></FaBars>Density
           </summary>
           <form className="p-2 shadow  menu dropdown-content z-[1] bg-slate-800  w-52">
@@ -92,15 +92,15 @@ const AllUsers = () => {
         </p>
       </div>
       <div>
-        <p className="flex items-center justify-center gap-2">
+        <p className="flex items-center justify-center gap-2 ">
           <FaUndoAlt></FaUndoAlt>Refresh
         </p>
       </div>
     </div>
     <div className="overflow-x-auto">
-      <table className="table border-0 mt-10 h-[full] bg-[#10425f] rounded-sm">
+      <table className="table border-0 mt-10 h-[full] bg-black rounded-sm">
         {/* head */}
-        <thead className="text-white bg-[#0e608f]">
+        <thead className="text-black bg-[#F99F24]">
           <tr className={`border-0 grid grid-cols-5 ${trHeight}`}>
             <th className={`flex items-center`}>Date</th>
             <th className="flex items-center">
