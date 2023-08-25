@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { getAuth } from "firebase/auth";
 import app from "../../Firebase/firebaseConfig";
-import { space } from "postcss/lib/list";
+// import { space } from "postcss/lib/list";
 // import { AuthContext } from "../../Providers/AuthProvider";
 
 const Navbar = () => {
@@ -84,11 +84,11 @@ const Navbar = () => {
             user ?
             <span className="flex items-center gap-3">
               <div className="avatar placeholder">
-                <div className="bg-neutral-focus text-neutral-content rounded-full w-16">
+                <div className="bg-neutral-focus text-neutral-content rounded-full w-12">
                 <img  src={user.photoURL} alt="" />
                 </div>
               </div>
-              <Link><button className='btn bg-[#F99F24] text-white border-none me-3 px-6 hover:bg-black hover:text-[#F99F24]' onClick={handleLogOut}>LogOut</button></Link>
+              <Link><button className='btn bg-[#F99F24] text-white border-none me-3 px-4  hover:bg-black hover:text-[#F99F24]' onClick={handleLogOut}>LogOut</button></Link>
             </span>
               :
               <Link to="/login">
