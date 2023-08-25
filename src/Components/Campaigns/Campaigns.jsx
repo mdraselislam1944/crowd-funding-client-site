@@ -49,10 +49,10 @@ const Campaigns = () => {
                 }
             ></SharedBanner>
             <div className="text-center mt-8">
-                <h2 className="text-3xl text-white font-bold">Our All Country Campaigns</h2>
-                <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto" />
+                <h2 className="text-3xl text-white font-bold p-2">Our All Country Campaigns</h2>
+                <hr className="border-b-[3px] w-[106px] mt-1 border-[#F99F24] mx-auto " />
             </div>
-            <div className="mt-4 relative w-10/12 mx-auto md:w-[20%] ">
+            <div className="mt-4 mb-4 relative w-10/12 mx-auto md:w-[20%] ">
                 <input
                     type="text"
                     placeholder="Type Here..."

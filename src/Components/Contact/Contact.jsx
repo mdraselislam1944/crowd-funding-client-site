@@ -27,7 +27,7 @@ const Contact = () => {
                 ></SharedBanner> 
 
                 <div className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${bg})` }}>
-                    <div className="md:flex justify-center gap-4 mx-auto pb-8 pt-8">
+                    <div className="md:flex justify-center gap-4 mx-auto pb-8 pt-8 lg:ps-0 md:ps-0 ps-5 ">
                         <div className="text-neutral">
                             <h1 className="text-3xl text-[#F99F24]">Address</h1>
                             <div className="flex items-center gap-3 mt-5">
