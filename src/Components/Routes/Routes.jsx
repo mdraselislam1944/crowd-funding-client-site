@@ -13,6 +13,10 @@ import SignUp from "../SignUP/SignUp";
 import Events from "../Events/Events";
 import Project from "../Project/Project";
 import Info from "../Project/Info";
+import Dashboard from "../../Dashboard/Dashboard";
+import Admin from "../../Dashboard/Admin/Admin";
+import AllUsers from "../../Dashboard/Admin/AllUser/AllUser";
+import AllProject from "../../Dashboard/Admin/AllProject/AllProject";
 
 const Router = createBrowserRouter([
     {
@@ -68,5 +72,24 @@ const Router = createBrowserRouter([
 
       ]
     },
+    {
+      path: "/dashboard",
+      element:<Dashboard></Dashboard>,
+      children:[
+        {
+          path:"",
+          element:<Admin></Admin>
+        },
+        {
+          path:"allProject",
+          element:<AllProject></AllProject>
+        },
+        {
+          path:"allUser",
+          element:<AllUsers></AllUsers>
+        }
+
+      ]
+    }
   ]);
   export default Router;
