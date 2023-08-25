@@ -125,7 +125,9 @@ const AllUsers = () => {
             </th>
           </tr>
         </thead>
-        <tbody className="h-[50vh] overflow-scroll"></tbody>
+        <tbody className="h-[50vh] overflow-scroll">
+            
+        </tbody>
       </table>
     </div>
   </div>

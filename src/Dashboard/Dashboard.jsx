@@ -43,7 +43,7 @@ function Dashboard() {
 
                 <Outlet className="h-screen overflow-y-scroll"></Outlet>
 
-                <div className="h-20 lg:hidden bg-[#125E8A]  top-0 left-0 right-0 absolute"></div>
+                <div className="h-20 lg:hidden bg-black opacity-50%  top-0 left-0 right-0 absolute"></div>
                 <div className="h-20 md:h-24 flex items-center  gap-5 justify-center invisible lg:visible bg-gradient-to-r from-black via-black to-[#F99F24] top-0 left-0 right-0 absolute">
                     <div className="flex items-center  justify-center gap-5 absolute left-80 ml-5">
                         <FaBars className="text-center text-3xl text-white" />
@@ -67,7 +67,7 @@ function Dashboard() {
 
                     <label
                         htmlFor="my-drawer-2"
-                        className="btn btn-primary bg-black rounded-none absolute right-5 top-5 drawer-button lg:hidden"
+                        className="btn border-[#f99F24] bg-black rounded-lg text-white absolute right-5 top-5 drawer-button lg:hidden"
                     >
                         <FaBars />
                     </label>
@@ -131,7 +131,7 @@ function Dashboard() {
                             <div className="flex flex-row hover:bg-gray-400">
                                 <FaBriefcase></FaBriefcase>
                                 <Link className=" w-full rounded-none m-0" to="/services">
-                                    Add Capmpaign
+                                    Add Campaign
                                 </Link>
                             </div>
                         </li>
