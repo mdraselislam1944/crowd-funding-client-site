@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import img from "../../assets/img/section-banner/larm-rmah-AEaTUnvneik-unsplash.jpg"
 import SharedBanner from "../Contact/SharedBanner";
-import bg from "../../assets/Video/wallpaperflare.com_wallpaper.jpg"
+import bg from "../../assets/Video/wallpaperflarecom_wallpaper.jpg"
 import Card from "./Card";
 const Events = () => {
     const [items, setItems]= useState([]);

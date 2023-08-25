@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import logo from "../../assets/img/logo-main/Orange_Black_Hummingbird_Tech_Digital_Bird_Logo__1_-removebg-preview.png"
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
+import { getAuth } from "firebase/auth";
+import app from "../../Firebase/firebaseConfig";
+import { space } from "postcss/lib/list";
 // import { AuthContext } from "../../Providers/AuthProvider";
 
 const Navbar = () => {
-  const user = 0;
+  const {user, logOut} = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleClose = () => setIsMenuOpen(false);
@@ -12,6 +16,15 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const auth = getAuth(app);
+  const handleLogOut = () => {
+    logOut(auth)
+      .then(result => { result })
+      .catch(error => {
+        console.log(error);
+      })
+  }
 
   return (
     <nav className="bg-black md:bg-opacity-50 bg-opacity-90 px-7 md:px-0 text-white p-4 shadow font-poppins w-full fixed z-10">
@@ -69,7 +82,14 @@ const Navbar = () => {
         <div className="hidden md:flex items-center">
         {
             user ?
-              <Link><button className='btn bg-[#F99F24] text-white border-none me-3 px-6 hover:bg-black hover:text-[#F99F24]' onClick="">LogOut</button></Link>
+            <span className="flex items-center gap-3">
+              <div className="avatar placeholder">
+                <div className="bg-neutral-focus text-neutral-content rounded-full w-16">
+                <img  src={user.photoURL} alt="" />
+                </div>
+              </div>
+              <Link><button className='btn bg-[#F99F24] text-white border-none me-3 px-6 hover:bg-black hover:text-[#F99F24]' onClick={handleLogOut}>LogOut</button></Link>
+            </span>
               :
               <Link to="/login">
                 <button
@@ -156,7 +176,15 @@ const Navbar = () => {
           </ul>
           {
             user ?
-              <Link><button className="text-[#F99F24] border border-[#F99F24] bg-inherit hover:bg-[#F99F24] focus:ring-4 focus:outline-none focus:ring-[#F99F24] font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 mt-6" onClick="">LogOut</button></Link>
+              <span className="flex items-center gap-3">
+                <div className="avatar placeholder">
+                <div className="bg-neutral-focus text-neutral-content rounded-full w-16">
+                 <img  src={user.photoURL} alt="" />
+                </div>
+              </div>
+              
+              <Link><button className="text-[#F99F24] border border-[#F99F24] bg-inherit hover:bg-[#F99F24] focus:ring-4 focus:outline-none focus:ring-[#F99F24] font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 mt-6" onClick={handleLogOut}>LogOut</button></Link>
+              </span>
               :
               <Link to="/login">
                 <button
