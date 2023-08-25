@@ -17,6 +17,8 @@ import Dashboard from "../../Dashboard/Dashboard";
 import Admin from "../../Dashboard/Admin/Admin";
 import AllUsers from "../../Dashboard/Admin/AllUser/AllUser";
 import AllProject from "../../Dashboard/Admin/AllProject/AllProject";
+import axios from "axios";
+import ProjectDescription from "../../Dashboard/Admin/AllProject/ProjectDescription";
 
 const Router = createBrowserRouter([
     {
@@ -82,13 +84,19 @@ const Router = createBrowserRouter([
         },
         {
           path:"allProject",
-          element:<AllProject></AllProject>
+          element:<AllProject></AllProject>,
+          loader:()=>axios.get("http://localhost:5000/blogs"),
         },
         {
           path:"allUser",
-          element:<AllUsers></AllUsers>
-        }
-
+          element:<AllUsers></AllUsers>,
+          loader:()=>axios.get("http://localhost:5000/users"),
+        },
+        {
+          path:"description/:id",
+          element:<ProjectDescription/>,
+          loader:({params})=>fetch(`http://localhost:5000/blogs/${params.id}`)
+        },
       ]
     }
   ]);
