@@ -62,7 +62,7 @@ function Dashboard() {
                 </div>
                 <div className="">
                     <div className="md:w-64 w-40 absolute z-30 top-5 md:top-2 md:left-5 left-4 lg:hidden">
-                        <img src={logo} alt="" />
+                        <Link to="/"><img src={logo} alt="" /></Link>
                     </div>
 
                     <label
