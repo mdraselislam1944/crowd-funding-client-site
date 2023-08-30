@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import {
   FaBars,
@@ -8,10 +9,41 @@ import {
 import { useLoaderData } from "react-router";
 import { Link } from "react-router-dom";
 const AllUsers = () => {
-  let count=1;
+  let count = 1;
   const [trHeight, setTrHeight] = useState("h-10");
-  const data = useLoaderData();
+  const [data, setData] = useState(useLoaderData());
   console.log(data.data)
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const search = e.target.search.value;
+    axios.get(`http://localhost:5000/users/${search}`)
+      .then(result => setData(result));
+  }
+  const handleAction = (id,data) => {
+    const saveUser = {
+    }
+    if(data.role=='admin'){
+      saveUser.role='user';
+    }
+    else{
+      saveUser.role='admin';
+    }
+    fetch(`http://localhost:5000/userAction/${id}`,{
+      method:"PATCH",
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body:JSON.stringify(saveUser)
+    })
+    .then(res=>res.json())
+    .then(result=>{
+      if (result.modifiedCount > 0) {
+        alert("modified successfully");
+        axios.get('http://localhost:5000/users')
+        .then(result => setData(result));
+      }
+    })
+  }
   return (
     <div className="bg-[#083149] px-10 mt w-full h-full mt-28 text-white">
       <div className="flex items-center justify-between mt-5">
@@ -19,28 +51,31 @@ const AllUsers = () => {
           All Users
         </h1>
         <div className="form-control mt-1 text-black">
-          <div className="input-group">
-            <input
-              type="text"
-              placeholder="Search…"
-              className="input input-bordered"
-            />
-            <button className="btn btn-square">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </button>
+          <div >
+            <form className="input-group" onSubmit={handleSearch}>
+              <input
+                type="text"
+                name="search"
+                placeholder="Search…"
+                className="input input-bordered"
+              />
+              <button className="btn btn-square">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -118,8 +153,8 @@ const AllUsers = () => {
                 <th>{count++}</th>
                 <td>{data.name}</td>
                 <td>{data.email}</td>
-                <td>{data?.action||"User"}</td>
-                <td>Action</td>
+                <td>{data?.role || "User"}</td>
+                <td><button onClick={() => handleAction(data._id,data)} className="btn btn-info">change role</button></td>
               </tr>)
             }
           </tbody>
