@@ -76,6 +76,14 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
+           { user &&
+           <li>
+              <Link to="/dashboard"
+                className="text-white hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
+              >
+                Dashboard
+              </Link>
+            </li>}
           </ul>
         </div>
        
@@ -173,6 +181,14 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
+            { user &&
+           <li>
+              <Link to="/dashboard"
+                className="text-white hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
+              >
+                Dashboard
+              </Link>
+            </li>}
           </ul>
           {
             user ?

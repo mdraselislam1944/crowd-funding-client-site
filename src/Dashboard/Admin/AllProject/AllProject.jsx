@@ -10,6 +10,7 @@ import { useLoaderData } from "react-router";
 import { Link } from "react-router-dom";
 
 const AllProject = () => {
+
   const [trHeight, setTrHeight] = useState("h-10");
   let count = 1;
   const [data, setData] = useState(useLoaderData());
@@ -22,8 +23,14 @@ const AllProject = () => {
     .then(result=>setData(result));
   }
 
+  const [ setTrHeight] = useState("h-10");
+  let count=1;
+  const data = useLoaderData();
+  console.log(data.data);
+
+
   return (
-    <div className="bg-[#083149] px-10 mt w-full h-full mt-28 text-white">
+    <div className="bg-black px-10 mt w-full h-full mt-28 text-white">
       <div className="flex items-center justify-between mt-5">
         <h1 className="text-5xl text-orange-300 normal-case font-semibold">
           All Projects
@@ -133,8 +140,13 @@ const AllProject = () => {
                 <td>{data?.name}</td>
                 <td>{data?.email}</td>
                 <td>{data?.phone || "User"}</td>
+ admin-action-route
                 <td>{data?.status}</td>
                 <Link to={`/dashboard/description/${data?._id}`} className="btn btn-info my-2">  <td>Details</td> </Link>
+
+                <td>Pending</td>
+               <Link to={`/dashboard/description/${data?._id}`} className="btn bg-[#f99F24] my-2">  <td>Details</td> </Link>
+
               </tr>)
             }
           </tbody>

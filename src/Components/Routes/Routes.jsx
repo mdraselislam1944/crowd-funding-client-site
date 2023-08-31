@@ -85,17 +85,17 @@ const Router = createBrowserRouter([
         {
           path:"allProject",
           element:<AllProject></AllProject>,
-          loader:()=>axios.get("http://localhost:5000/blogs"),
+          loader:()=>axios.get("https://crowdfunding-gamma.vercel.app/blogs"),
         },
         {
           path:"allUser",
           element:<AllUsers></AllUsers>,
-          loader:()=>axios.get("http://localhost:5000/users"),
+          loader:()=>axios.get("https://crowdfunding-gamma.vercel.app/users"),
         },
         {
           path:"description/:id",
           element:<ProjectDescription/>,
-          loader:({params})=>fetch(`http://localhost:5000/blogs/${params.id}`)
+          loader:({params})=>fetch(`https://crowdfunding-gamma.vercel.app/blogs/${params.id}`)
         },
       ]
     }

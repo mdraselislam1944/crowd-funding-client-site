@@ -7,11 +7,11 @@ import {
   FaUndoAlt,
 } from "react-icons/fa";
 import { useLoaderData } from "react-router";
-import { Link } from "react-router-dom";
 const AllUsers = () => {
   let count = 1;
   const [trHeight, setTrHeight] = useState("h-10");
   const [data, setData] = useState(useLoaderData());
+
   console.log(data.data)
   const handleSearch = (e) => {
     e.preventDefault();
@@ -45,7 +45,7 @@ const AllUsers = () => {
     })
   }
   return (
-    <div className="bg-[#083149] px-10 mt w-full h-full mt-28 text-white">
+    <div className="bg-black px-10 mt w-full h-full mt-28 text-white">
       <div className="flex items-center justify-between mt-5">
         <h1 className="text-5xl text-orange-300 normal-case font-semibold">
           All Users
@@ -165,19 +165,3 @@ const AllUsers = () => {
 };
 
 export default AllUsers;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
