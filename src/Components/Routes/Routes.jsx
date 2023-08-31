@@ -23,6 +23,7 @@ import ACampaign from "../../Dashboard/Admin/ACampaign/ACampaign";
 import UserPayment from "../../Dashboard/Admin/UserPayment/UserPayment";
 import AEvent from "../../Dashboard/Admin/AEvent/AEvent";
 import BlogNews from "../../Dashboard/Admin/BlogNews/BlogNews";
+import AllNews from "../AllNews/AllNews";
 
 const Router = createBrowserRouter([
     {
@@ -58,6 +59,10 @@ const Router = createBrowserRouter([
         {
           path: "/event",
           element: <Events></Events>
+        },
+        {
+          path: "/allNews",
+          element: <AllNews></AllNews>
         },
         {
           path: "/login",
