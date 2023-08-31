@@ -9,7 +9,7 @@ import {
 import { useLoaderData } from "react-router";
 const AllUsers = () => {
   let count = 1;
-  const [trHeight, setTrHeight] = useState("h-10");
+  const [, setTrHeight] = useState("h-10");
   const [data, setData] = useState(useLoaderData());
 
   console.log(data.data)
@@ -139,7 +139,7 @@ const AllUsers = () => {
         <table className="table text-white">
           {/* head */}
           <thead>
-            <tr className="text-white text-xl">
+            <tr className="text-orange-300 text-xl">
               <th>Serial No</th>
               <th>Name</th>
               <th>E-mail</th>
@@ -150,11 +150,11 @@ const AllUsers = () => {
           <tbody>
             {
               data.data.map(data => <tr key={data._id}>
-                <th>{count++}</th>
+                <th >{count++}</th>
                 <td>{data.name}</td>
                 <td>{data.email}</td>
                 <td>{data?.role || "User"}</td>
-                <td><button onClick={() => handleAction(data._id,data)} className="btn btn-info">change role</button></td>
+                <td><button onClick={() => handleAction(data._id,data)} className="btn rounded-bl-full rounded-tr-full  bg-transparent text-[#F99F24] hover:text-black hover:bg-[#F99F24]  ">change role</button></td>
               </tr>)
             }
           </tbody>

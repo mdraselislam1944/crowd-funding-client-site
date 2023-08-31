@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const AllProject = () => {
 
-  const [trHeight, setTrHeight] = useState("h-10");
+  const [ setTrHeight] = useState("h-10");
   let count = 1;
   const [data, setData] = useState(useLoaderData());
 
@@ -23,10 +23,10 @@ const AllProject = () => {
     .then(result=>setData(result));
   }
 
-  const [ setTrHeight] = useState("h-10");
-  let count=1;
-  const data = useLoaderData();
-  console.log(data.data);
+  // const [ setTrHeight] = useState("h-10");
+  // let count=1;
+  // const data = useLoaderData();
+  // console.log(data.data);
 
 
   return (
