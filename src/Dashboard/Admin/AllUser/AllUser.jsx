@@ -57,9 +57,11 @@ const AllUsers = () => {
                 type="text"
                 name="search"
                 placeholder="Search…"
-                className="input input-bordered"
+                className=" input input-bordered border border-black rounded-full text-black placeholder-black
+                bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%"
               />
-              <button className="btn btn-square">
+              <button className="btn  border border-black rounded-full text-black placeholder-black
+                bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"

@@ -37,14 +37,18 @@ const AllProject = () => {
         </h1>
         <div className="form-control mt-1 text-black">
           <div >
+            {/* className="w-full px-4 py-2 mt-3  border border-black rounded-full text-black placeholder-black
+                    bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%" */}
             <form onSubmit={handleSearch} className="input-group">
               <input
               name="search"
                 type="text"
                 placeholder="Search…"
-                className="input input-bordered"
+                className="input input-bordered border border-black rounded-full text-black placeholder-black
+                bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%"
               />
-              <button className="btn btn-square">
+              <button className="btn border border-black rounded-full text-black placeholder-black
+                bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -124,7 +128,7 @@ const AllProject = () => {
         <table className="table text-white">
           {/* head */}
           <thead>
-            <tr className="text-white text-xl">
+            <tr className="text-orange-300 text-xl">
               <th>Serial No</th>
               <th>Name</th>
               <th>E-mail</th>
@@ -140,13 +144,9 @@ const AllProject = () => {
                 <td>{data?.name}</td>
                 <td>{data?.email}</td>
                 <td>{data?.phone || "User"}</td>
- admin-action-route
+
                 <td>{data?.status}</td>
-                <Link to={`/dashboard/description/${data?._id}`} className="btn btn-info my-2">  <td>Details</td> </Link>
-
-                <td>Pending</td>
-               <Link to={`/dashboard/description/${data?._id}`} className="btn bg-[#f99F24] my-2">  <td>Details</td> </Link>
-
+                <Link to={`/dashboard/description/${data?._id}`} className="btn rounded-bl-full rounded-tr-full  bg-transparent text-[#F99F24] hover:text-black hover:bg-[#F99F24] my-2 ">  <td>Details</td> </Link>
               </tr>)
             }
           </tbody>
