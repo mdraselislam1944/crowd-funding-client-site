@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import {
   FaBars,
@@ -9,10 +10,24 @@ import { useLoaderData } from "react-router";
 import { Link } from "react-router-dom";
 
 const AllProject = () => {
+
   const [ setTrHeight] = useState("h-10");
-  let count=1;
-  const data = useLoaderData();
-  console.log(data.data);
+  let count = 1;
+  const [data, setData] = useState(useLoaderData());
+
+  const handleSearch=(e)=>{
+    e.preventDefault();
+    const search=e.target.search.value;
+    console.log(search)
+    axios.get(`http://localhost:5000/blogsSearch/${search}`)
+    .then(result=>setData(result));
+  }
+
+  // const [ setTrHeight] = useState("h-10");
+  // let count=1;
+  // const data = useLoaderData();
+  // console.log(data.data);
+
 
   return (
     <div className="bg-black px-10 mt w-full h-full mt-28 text-white">
@@ -21,28 +36,35 @@ const AllProject = () => {
           All Projects
         </h1>
         <div className="form-control mt-1 text-black">
-          <div className="input-group">
-            <input
-              type="text"
-              placeholder="Search…"
-              className="input input-bordered"
-            />
-            <button className="btn btn-square">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </button>
+          <div >
+            {/* className="w-full px-4 py-2 mt-3  border border-black rounded-full text-black placeholder-black
+                    bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%" */}
+            <form onSubmit={handleSearch} className="input-group">
+              <input
+              name="search"
+                type="text"
+                placeholder="Search…"
+                className="input input-bordered border border-black rounded-full text-black placeholder-black
+                bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%"
+              />
+              <button className="btn border border-black rounded-full text-black placeholder-black
+                bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -106,7 +128,7 @@ const AllProject = () => {
         <table className="table text-white">
           {/* head */}
           <thead>
-            <tr className="text-white text-xl">
+            <tr className="text-orange-300 text-xl">
               <th>Serial No</th>
               <th>Name</th>
               <th>E-mail</th>
@@ -117,13 +139,14 @@ const AllProject = () => {
           </thead>
           <tbody>
             {
-              data.data.map(data => <tr  key={data._id}>
+              data.data.map(data => <tr key={data._id}>
                 <th>{count++}</th>
                 <td>{data?.name}</td>
                 <td>{data?.email}</td>
                 <td>{data?.phone || "User"}</td>
-                <td>Pending</td>
-               <Link to={`/dashboard/description/${data?._id}`} className="btn bg-[#f99F24] my-2">  <td>Details</td> </Link>
+
+                <td>{data?.status}</td>
+                <Link to={`/dashboard/description/${data?._id}`} className="btn rounded-bl-full rounded-tr-full  bg-transparent text-[#F99F24] hover:text-black hover:bg-[#F99F24] my-2 ">  <td>Details</td> </Link>
               </tr>)
             }
           </tbody>

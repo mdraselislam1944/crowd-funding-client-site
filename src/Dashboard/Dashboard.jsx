@@ -50,7 +50,7 @@ function Dashboard() {
                         <input type="text" placeholder="Search Here" className="input input-bordered input-info w-full max-w-xs" />
                     </div>
                     <div className="flex items-center gap-7 justify-center absolute right-5">
-                        <FaHouseDamage className="text-center text-3xl text-white" />
+                        <Link to="/"><FaHouseDamage className="text-center text-3xl text-white" /></Link>
                         <FaExpand className="text-center text-3xl text-white" />
                         <FaBell className="text-center text-3xl text-white" />
                         <div className="avatar">
@@ -61,7 +61,7 @@ function Dashboard() {
                     </div>
                 </div>
                 <div className="">
-                    <div className="md:w-64 w-40 absolute z-30 top-5 md:top-2 md:left-5 left-4 lg:hidden">
+                    <div className="md:w-64 w-40 absolute z-30 top-5 md:top-2 md:left-5 left-4 lg:hidden md:hidden block">
                         <Link to="/"><img src={logo} alt="" /></Link>
                     </div>
 
@@ -106,7 +106,7 @@ function Dashboard() {
                             <div className="flex flex-row hover:bg-gray-400">
                                 <FaArtstation></FaArtstation>
                                 <Link className=" w-full rounded-none m-0" to="/dashboard/allProject">
-                                    Projects
+                                    All Projects
                                 </Link>
                             </div>
                         </li>
@@ -114,7 +114,7 @@ function Dashboard() {
                             <div className="flex flex-row hover:bg-gray-400">
                                 <FaAddressCard></FaAddressCard>
                                 <Link className=" w-full rounded-none m-0" to="/dashboard/allUser">
-                                    Users
+                                    All Users
                                 </Link>
                             </div>
                         </li>
@@ -122,32 +122,32 @@ function Dashboard() {
                             <div className="flex flex-row hover:bg-gray-400">
                                 {/* <img className="w-4 h-4" src={products} alt="" /> */}
                                 <FaRegClone></FaRegClone>
-                                <Link className=" w-full rounded-none m-0" to="/products">
-                                    Donation
+                                <Link className=" w-full rounded-none m-0" to="/dashboard/UserPayment">
+                                    Payment
                                 </Link>
                             </div>
                         </li>
                         <li className="mt-3">
                             <div className="flex flex-row hover:bg-gray-400">
                                 <FaBriefcase></FaBriefcase>
-                                <Link className=" w-full rounded-none m-0" to="/services">
-                                    Add Campaign
+                                <Link className=" w-full rounded-none m-0" to="/dashboard/aCampaign">
+                                    Campaign
                                 </Link>
                             </div>
                         </li>
                         <li className="mt-3">
                             <div className="flex flex-row hover:bg-gray-400">
                                 <FaLock></FaLock>
-                                <Link className=" w-full rounded-none m-0" to="/security">
-                                    Security
+                                <Link className=" w-full rounded-none m-0" to="/dashboard/aEvent">
+                                    Event
                                 </Link>
                             </div>
                         </li>
                         <li className="mt-3">
                             <div className="flex flex-row hover:bg-gray-400">
                                 <FaAngular></FaAngular>
-                                <Link className=" w-full rounded-none m-0" to="/company">
-                                    Company
+                                <Link className=" w-full rounded-none m-0" to="/dashboard/blog">
+                                    Blog
                                 </Link>
                             </div>
                         </li>

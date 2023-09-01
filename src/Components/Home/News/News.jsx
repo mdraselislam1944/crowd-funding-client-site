@@ -3,9 +3,11 @@ import img4 from "../../../../src/assets/img/others img/jeremias-ybanez-fqFm_YJG
 import img5 from "../../../../src/assets/img/others img/joel-muniz-BlnpElo7clE-unsplash.jpg"
 import img6 from "../../../../src/assets/img/others img/jordy-meow-Osd4ngHD4kM-unsplash.jpg"
 import img7 from "../../../../src/assets/img/others img/josh-appel-NeTPASr-bmQ-unsplash.jpg"
+
 import { useRef, useEffect } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
 
+import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 
 
 const News = () => {
@@ -95,10 +97,16 @@ const News = () => {
                     </div>
 
                 </div>
+
             </motion.div>
 
+            </div>
+        <div className="text-end">
+            <Link to="/allNews">
+            <button className="btn w-1/4 mb-3 mr-3 hover:text-black bg-transparent text-[#F99F24]   ">See more <BsFillArrowRightCircleFill className="text-xl text-[#F99F24] hover:text-black"/></button></Link>
         </div>
-    );
+        </div>
+    )
 };
 
 export default News;
