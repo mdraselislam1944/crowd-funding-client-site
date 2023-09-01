@@ -24,6 +24,7 @@ import UserPayment from "../../Dashboard/Admin/UserPayment/UserPayment";
 import AEvent from "../../Dashboard/Admin/AEvent/AEvent";
 import BlogNews from "../../Dashboard/Admin/BlogNews/BlogNews";
 import AllNews from "../AllNews/AllNews";
+import CampaignDetails from "../../Dashboard/Admin/ACampaign/CampaignDetails";
 
 const Router = createBrowserRouter([
     {
@@ -108,12 +109,23 @@ const Router = createBrowserRouter([
         },
         {
           path:"aCampaign",
-          element:<ACampaign></ACampaign>
-          
+          element:<ACampaign></ACampaign>,
+          loader:()=>fetch('http://localhost:5000/campaigns'),
+        },
+        {
+          path:"aCampaign/:id",
+          element:<CampaignDetails/>,
+          loader:({params})=>fetch(`http://localhost:5000/campaigns/${params.id}`),
+        },
+        {
+          path:"description/:id",
+          element:<ProjectDescription/>,
+          loader:({params})=>fetch(`https://crowdfunding-gamma.vercel.app/blogs/${params.id}`)
         },
         {
           path:"UserPayment",
-          element:<UserPayment></UserPayment>
+          element:<UserPayment></UserPayment>,
+          loader:()=>fetch("http://localhost:5000/paymentHistory"),
           
         },
         {
