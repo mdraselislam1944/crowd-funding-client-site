@@ -100,7 +100,7 @@ const News = () => {
 
             </motion.div>
 
-            </div>
+           
         <div className="text-end">
             <Link to="/allNews">
             <button className="btn w-1/4 mb-3 mr-3 hover:text-black bg-transparent text-[#F99F24]   ">See more <BsFillArrowRightCircleFill className="text-xl text-[#F99F24] hover:text-black"/></button></Link>

@@ -64,6 +64,7 @@ const Router = createBrowserRouter([
         {
           path: "/allNews",
           element: <AllNews></AllNews>
+
         },
         {
           path: "/login",

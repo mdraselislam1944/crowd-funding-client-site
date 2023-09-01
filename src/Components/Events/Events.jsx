@@ -60,23 +60,8 @@ const Events = () => {
                 >
                     <h2 className="text-3xl font-bold text-white ">Our All Events</h2>
                     <hr className="border-b-[3px] w-[106px] mt-1 mb-5 border-[#F99F24] mx-auto" />
-
-                </motion.div>
-                <motion.div className="mb-6 relative w-10/12 mx-auto md:w-[20%]"
-
-                    variants={{
-                        hidden: { opacity: 0, y: 75 },
-                        visible: { opacity: 1, y: 0 }
-                    }}
-                    initial="hidden"
-                    animate={mainControls}
-                    transition={{ duration: 0.9, delay: 1.2 }}
-
-                >
-
-                </div>
+               
                 <div className="mb-6 relative w-10/12 mx-auto md:w-[20%]  ">
-
                     <input
                         type="text"
                         placeholder="Search Here..."
@@ -86,20 +71,8 @@ const Events = () => {
                     bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%"
                     />
                     <BsSearch className="absolute top-[30%] right-2 text-black  p-1 w-8 h-8 rounded-full" />
-
-                </motion.div>
-            </div>
-            <motion.div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 p-2  gap-2"
-                variants={{
-                    hidden: { opacity: 0, y: 75 },
-                    visible: { opacity: 1, y: 0 }
-                }}
-                initial="hidden"
-                animate={mainControls}
-                transition={{ duration: 0.9, delay: 1.5 }}
-
-            >
                 </div>
+                </motion.div>
             </div>
             <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 p-2  gap-2" >
                 {
@@ -111,13 +84,9 @@ const Events = () => {
                     )
                 }
 
+            </div >
 
-            </motion.div>
-
-            </div>
-
-
-        </div>
+        </div >
     );
 };
 
