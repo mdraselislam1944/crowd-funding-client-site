@@ -50,7 +50,7 @@ function Dashboard() {
                         <input type="text" placeholder="Search Here" className="input input-bordered input-info w-full max-w-xs" />
                     </div>
                     <div className="flex items-center gap-7 justify-center absolute right-5">
-                        <FaHouseDamage className="text-center text-3xl text-white" />
+                        <Link to="/"><FaHouseDamage className="text-center text-3xl text-white" /></Link>
                         <FaExpand className="text-center text-3xl text-white" />
                         <FaBell className="text-center text-3xl text-white" />
                         <div className="avatar">
