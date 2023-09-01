@@ -21,7 +21,7 @@ const UserPayment = () => {
         e.preventDefault();
         const name=e.target.search.value;
         console.log(name)
-        axios.get(`http://localhost:5000/paymentHistory/${name}`)
+        axios.get(`https://crowdfunding-gamma.vercel.app/paymentHistory/${name}`)
         .then(result=>{
             setPayments(result.data.filter(payment => payment.transaction !== null && payment.transaction !== undefined));
         })

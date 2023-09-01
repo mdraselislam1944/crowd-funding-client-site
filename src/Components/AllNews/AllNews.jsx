@@ -14,12 +14,15 @@ const AllNews = () => {
 
     const { user } = useContext(AuthContext);
     const [comments, setComments] = useState([]);
+    const [, setLoading] = useState(true)
     useEffect(() => {
-        fetch("http://localhost:5000/allComments")
+        setLoading(true)
+        fetch("https://crowdfunding-gamma.vercel.app/allComments")
             .then(res => res.json())
             .then(data => {
                 console.log(data);
                 setComments(data);
+                setLoading(false)
             })
     }, [user])
     return (
