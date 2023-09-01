@@ -19,30 +19,30 @@ const AllUsers = () => {
     axios.get(`http://localhost:5000/users/${search}`)
       .then(result => setData(result));
   }
-  const handleAction = (id,data) => {
+  const handleAction = (id, data) => {
     const saveUser = {
     }
-    if(data.role=='admin'){
-      saveUser.role='user';
+    if (data.role == 'admin') {
+      saveUser.role = 'user';
     }
-    else{
-      saveUser.role='admin';
+    else {
+      saveUser.role = 'admin';
     }
-    fetch(`http://localhost:5000/userAction/${id}`,{
-      method:"PATCH",
-      headers:{
+    fetch(`http://localhost:5000/userAction/${id}`, {
+      method: "PATCH",
+      headers: {
         'Content-Type': 'application/json'
       },
-      body:JSON.stringify(saveUser)
+      body: JSON.stringify(saveUser)
     })
-    .then(res=>res.json())
-    .then(result=>{
-      if (result.modifiedCount > 0) {
-        alert("modified successfully");
-        axios.get('http://localhost:5000/users')
-        .then(result => setData(result));
-      }
-    })
+      .then(res => res.json())
+      .then(result => {
+        if (result.modifiedCount > 0) {
+          alert("modified successfully");
+          axios.get('http://localhost:5000/users')
+            .then(result => setData(result));
+        }
+      })
   }
   return (
     <div className="bg-black px-10 mt w-full h-full mt-28 text-white">
@@ -156,7 +156,7 @@ const AllUsers = () => {
                 <td>{data.name}</td>
                 <td>{data.email}</td>
                 <td>{data?.role || "User"}</td>
-                <td><button onClick={() => handleAction(data._id,data)} className="btn rounded-bl-full rounded-tr-full  bg-transparent text-[#F99F24] hover:text-black hover:bg-[#F99F24]  ">change role</button></td>
+                <td><button onClick={() => handleAction(data._id, data)} className="btn rounded-bl-full rounded-tr-full  bg-transparent text-[#F99F24] hover:text-black hover:bg-[#F99F24]  ">change role</button></td>
               </tr>)
             }
           </tbody>
