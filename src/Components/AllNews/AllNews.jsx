@@ -28,9 +28,7 @@ const AllNews = () => {
     return (
 
         <div className="max-w-7xl mx-auto">
-            <div className="max-w-7xl mx-auto  import { FcLike } from 'react-icons/fc';
-// import {FaDeleteLeft} from 'react-icons/fa';
-// import  { BiSolidShare} from 'react-icons/bi';">
+            <div className="max-w-7xl mx-auto  ">
                 <div className="">
                     <SharedBanner
                         background={img}
@@ -55,7 +53,7 @@ const AllNews = () => {
                 </div>
             </div>
             <div className="max-w-7xl mx-auto 
-            grid lg:grid-flow-col md:grid-flow-col gap-3">
+            grid lg:grid-flow-col md:grid-flow-col grid-flow-col-none grid-cols-1 gap-3">
                 <div className="col-span-5 text-center mt-8">
                     {/* News section */}
 
@@ -123,7 +121,7 @@ const AllNews = () => {
                     </div>
                 </div>
                
-                <div className="lg:col-span-2  ">
+                <div className="lg:col-span-2 col-span-1  ">
                     {/* comment section */}
                     {/* <hr  className="border h-96 w-0"/> */}
                     <div className="text-center mt-8 ">
@@ -134,13 +132,13 @@ const AllNews = () => {
 
                     </div>
                     {/* user comments */}
-                    <div className="bg-white mt-5 mb-5 text-black text-left ">
+                    <div className="bg-white mt-5 mb-5 text-black lg:text-left text-center ">
                         {
                             comments.map((com) => <div key={com}>
                                 <div className="grid grid-cols-2 ">
                                     <div className="flex gap-3">
                                         <div className=" text-neutral-content  w-12">
-                                            <img className="rounded-full w-12"
+                                            <img className="rounded-full w-12 h-12"
                                                 src={user.photoURL} alt="" />
                                         </div>
                                         <p className="my-2 text-lg">{user.displayName}</p>
