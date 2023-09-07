@@ -236,6 +236,7 @@ const Header = () => {
                       Start a Project
                     </motion.button>
                   </Link>
+                  
                   <Link to="/donate">
                     <motion.button
                       type="button"
@@ -252,6 +253,7 @@ const Header = () => {
                       Donate Now
                     </motion.button>
                   </Link>
+                  
                 </div>
               </div>
             </div>

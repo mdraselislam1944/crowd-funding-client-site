@@ -75,7 +75,7 @@ const About = () => {
             <p>We are the dreamers who dream to make the world a better home.</p>
             <p>We are the dreamers who dream to make the world a better home.</p>
           </div>
-          <Link to="/about">
+          <Link to="/socialBlog">
             <button className="mt-4 px-4 py-2 bg-[#F99F24] text-white font-semibold shadow-2xl hover:bg-[#fd9400] rounded">See More</button>
           </Link>
         </motion.div>
