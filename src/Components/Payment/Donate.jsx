@@ -37,6 +37,7 @@ const Donate = () => {
             address:form.address.value,
             price:form.payment.value,
             message:form.message.value,
+            email:form.email.value,
         }
         fetch("https://crowdfunding-gamma.vercel.app/saveAddress",{
             method:"POST",
@@ -94,6 +95,7 @@ const Donate = () => {
 
 >
             <input type='text' name='name' className='input input-bordered w-full my-2 bg-white' placeholder='Enter your name' required></input><br />
+            <input type='email' name='email' className='input input-bordered w-full my-2 bg-white' placeholder='Enter your email' required></input><br />
             <input type='number' name='number' className='input input-bordered w-full my-2 bg-white' placeholder='Enter your mobile number' required></input><br />
             <textarea rows="10" cols="50" name='address' className='input input-bordered w-full my-2' placeholder='Enter your address' required></textarea><br />
             <input type='number' name='payment' className='input input-bordered w-full my-2 bg-white' placeholder='Enter total payment dollars' required></input><br />
