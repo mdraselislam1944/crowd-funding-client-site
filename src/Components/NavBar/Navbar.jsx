@@ -20,7 +20,10 @@ const Navbar = () => {
   const auth = getAuth(app);
   const handleLogOut = () => {
     logOut(auth)
-      .then(result => { result })
+      .then(result => { 
+        localStorage.removeItem('set-token-for-user')
+        result
+       })
       .catch(error => {
         console.log(error);
       })

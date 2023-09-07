@@ -25,6 +25,14 @@ import AEvent from "../../Dashboard/Admin/AEvent/AEvent";
 import BlogNews from "../../Dashboard/Admin/BlogNews/BlogNews";
 import AllNews from "../AllNews/AllNews";
 import CampaignDetails from "../../Dashboard/Admin/ACampaign/CampaignDetails";
+import AddBlog from "../../Dashboard/Users/AddBlog";
+import AddCampaign from "../../Dashboard/Users/AddCampaign";
+import AddEvent from "../../Dashboard/Users/AddEvent";
+import Blog from "../../Dashboard/Users/Blog";
+import Campaign from "../../Dashboard/Users/Campaign";
+import Event from "../../Dashboard/Users/Event";
+import UserPaymentHistory from "../../Dashboard/Users/UserPaymentHistory";
+
 
 const Router = createBrowserRouter([
     {
@@ -138,6 +146,34 @@ const Router = createBrowserRouter([
           element:<BlogNews></BlogNews>
           
         },
+        {
+          path:"userAddBlogs",
+          element:<AddBlog/>
+        },
+        {
+          path:"UserAddCampaign",
+          element:<AddCampaign/>
+        },
+        {
+          path:"AddEvent",
+          element:<AddEvent/>,
+        },
+        {
+          path:"userBlog",
+          element:<Blog/>,
+        },
+        {
+          path:"userCampaign",
+          element:<Campaign/>
+        },
+        {
+          path:"userEvent",
+          element:<Event/>,
+        },
+        {
+          path:"payment",
+          element:<UserPaymentHistory/>,
+        }
       ]
     }
   ]);

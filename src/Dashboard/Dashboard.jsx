@@ -15,26 +15,12 @@ import {
     FaLock,
     FaQrcode,
     FaRegClone,
-    //   FaAngleDown,
-    //   FaAngleUp,
-    //   FaCheck,
-    //   FaCompactDisc,
-    //   FaGem,
-    //   FaGlobe,
-    //   FaLink,
-    //   FaMedrt,
-    //   FaPodcast,
-    //   FaRebel,
-    //   FaShoppingCart,
-    //   FaUndoAlt,
-    //   FaVimeoSquare,
-    //   FaWindowRestore,
-    //   FaYarn,
 } from "react-icons/fa";
+import useAdmin from "../hooks/useAdmin";
 
-function Dashboard() {
-    // const [count, setCount] = useState(0)
-    //   const [orderIsOpen, setOrderIsOpen] = useState(false);
+const Dashboard = () => {
+    const [isAdmin] = useAdmin();
+    console.log(isAdmin);
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -92,82 +78,142 @@ function Dashboard() {
                                 </Link>
                             </div>
                         </li>
+                        {
+                            isAdmin ? <>
+                                <li className="mt-3">
+                                    <div className="flex flex-row hover:bg-gray-400">
+                                        <FaDollarSign className="border rounded-full"></FaDollarSign>
+                                        <Link to="/revenue" className=" w-full rounded-none m-0" >
+                                            Revenue
+                                        </Link>
+                                    </div>
+                                </li>
+                                <li className="mt-3">
+                                    <div className="flex flex-row hover:bg-gray-400">
+                                        <FaArtstation></FaArtstation>
+                                        <Link className=" w-full rounded-none m-0" to="/dashboard/allProject">
+                                            All Projects
+                                        </Link>
+                                    </div>
+                                </li>
+                                <li className="mt-3">
+                                    <div className="flex flex-row hover:bg-gray-400">
+                                        <FaAddressCard></FaAddressCard>
+                                        <Link className=" w-full rounded-none m-0" to="/dashboard/allUser">
+                                            All Users
+                                        </Link>
+                                    </div>
+                                </li>
+                                <li className="mt-3">
+                                    <div className="flex flex-row hover:bg-gray-400">
+                                        {/* <img className="w-4 h-4" src={products} alt="" /> */}
+                                        <FaRegClone></FaRegClone>
+                                        <Link className=" w-full rounded-none m-0" to="/dashboard/UserPayment">
+                                            Payment
+                                        </Link>
+                                    </div>
+                                </li>
+                                <li className="mt-3">
+                                    <div className="flex flex-row hover:bg-gray-400">
+                                        <FaBriefcase></FaBriefcase>
+                                        <Link className=" w-full rounded-none m-0" to="/dashboard/aCampaign">
+                                            Campaign
+                                        </Link>
+                                    </div>
+                                </li>
+                                <li className="mt-3">
+                                    <div className="flex flex-row hover:bg-gray-400">
+                                        <FaLock></FaLock>
+                                        <Link className=" w-full rounded-none m-0" to="/dashboard/aEvent">
+                                            Event
+                                        </Link>
+                                    </div>
+                                </li>
+                                <li className="mt-3">
+                                    <div className="flex flex-row hover:bg-gray-400">
+                                        <FaAngular></FaAngular>
+                                        <Link className=" w-full rounded-none m-0" to="/dashboard/blog">
+                                            Blog
+                                        </Link>
+                                    </div>
+                                </li>
 
-
-                        <li className="mt-3">
-                            <div className="flex flex-row hover:bg-gray-400">
-                                <FaDollarSign className="border rounded-full"></FaDollarSign>
-                                <Link to="/revenue" className=" w-full rounded-none m-0" >
-                                    Revenue
-                                </Link>
-                            </div>
-                        </li>
-                        <li className="mt-3">
-                            <div className="flex flex-row hover:bg-gray-400">
-                                <FaArtstation></FaArtstation>
-                                <Link className=" w-full rounded-none m-0" to="/dashboard/allProject">
-                                    All Projects
-                                </Link>
-                            </div>
-                        </li>
-                        <li className="mt-3">
-                            <div className="flex flex-row hover:bg-gray-400">
-                                <FaAddressCard></FaAddressCard>
-                                <Link className=" w-full rounded-none m-0" to="/dashboard/allUser">
-                                    All Users
-                                </Link>
-                            </div>
-                        </li>
-                        <li className="mt-3">
-                            <div className="flex flex-row hover:bg-gray-400">
-                                {/* <img className="w-4 h-4" src={products} alt="" /> */}
-                                <FaRegClone></FaRegClone>
-                                <Link className=" w-full rounded-none m-0" to="/dashboard/UserPayment">
-                                    Payment
-                                </Link>
-                            </div>
-                        </li>
-                        <li className="mt-3">
-                            <div className="flex flex-row hover:bg-gray-400">
-                                <FaBriefcase></FaBriefcase>
-                                <Link className=" w-full rounded-none m-0" to="/dashboard/aCampaign">
-                                    Campaign
-                                </Link>
-                            </div>
-                        </li>
-                        <li className="mt-3">
-                            <div className="flex flex-row hover:bg-gray-400">
-                                <FaLock></FaLock>
-                                <Link className=" w-full rounded-none m-0" to="/dashboard/aEvent">
-                                    Event
-                                </Link>
-                            </div>
-                        </li>
-                        <li className="mt-3">
-                            <div className="flex flex-row hover:bg-gray-400">
-                                <FaAngular></FaAngular>
-                                <Link className=" w-full rounded-none m-0" to="/dashboard/blog">
-                                    Blog
-                                </Link>
-                            </div>
-                        </li>
-
-                        <li className="mt-3">
-                            <div className="flex flex-row hover:bg-gray-400">
-                                <FaCog></FaCog>
-                                <Link className=" w-full rounded-none m-0" to="/settings">
-                                    Setting
-                                </Link>
-                            </div>
-                        </li>
-                        <li className="mt-3">
-                            <div className="flex flex-row hover:bg-gray-400">
-                                <FaExternalLinkAlt></FaExternalLinkAlt>
-                                <Link className=" w-full rounded-none m-0" to="/logout">
-                                    Log Out
-                                </Link>
-                            </div>
-                        </li>
+                                <li className="mt-3">
+                                    <div className="flex flex-row hover:bg-gray-400">
+                                        <FaCog></FaCog>
+                                        <Link className=" w-full rounded-none m-0" to="/settings">
+                                            Setting
+                                        </Link>
+                                    </div>
+                                </li>
+                                <li className="mt-3">
+                                    <div className="flex flex-row hover:bg-gray-400">
+                                        <FaExternalLinkAlt></FaExternalLinkAlt>
+                                        <Link className=" w-full rounded-none m-0" to="/logout">
+                                            Log Out
+                                        </Link>
+                                    </div>
+                                </li>
+                            </> :
+                                <>
+                                    <li className="mt-3">
+                                        <div className="flex flex-row hover:bg-gray-400">
+                                            <FaBriefcase></FaBriefcase>
+                                            <Link className=" w-full rounded-none m-0" to="/dashboard/userAddBlogs">
+                                                Add Blog
+                                            </Link>
+                                        </div>
+                                    </li>
+                                    <li className="mt-3">
+                                        <div className="flex flex-row hover:bg-gray-400">
+                                            <FaBriefcase></FaBriefcase>
+                                            <Link className=" w-full rounded-none m-0" to="/dashboard/userBlog">
+                                                 Blogs
+                                            </Link>
+                                        </div>
+                                    </li>
+                                    <li className="mt-3">
+                                        <div className="flex flex-row hover:bg-gray-400">
+                                            <FaBriefcase></FaBriefcase>
+                                            <Link className=" w-full rounded-none m-0" to="/dashboard/UserAddCampaign">
+                                                Add Campaign
+                                            </Link>
+                                        </div>
+                                    </li>
+                                    <li className="mt-3">
+                                        <div className="flex flex-row hover:bg-gray-400">
+                                            <FaBriefcase></FaBriefcase>
+                                            <Link className=" w-full rounded-none m-0" to="/dashboard/userCampaign">
+                                                 Campaign
+                                            </Link>
+                                        </div>
+                                    </li>
+                                    <li className="mt-3">
+                                        <div className="flex flex-row hover:bg-gray-400">
+                                            <FaBriefcase></FaBriefcase>
+                                            <Link className=" w-full rounded-none m-0" to="/dashboard/AddEvent">
+                                                 Add Event
+                                            </Link>
+                                        </div>
+                                    </li>
+                                    <li className="mt-3">
+                                        <div className="flex flex-row hover:bg-gray-400">
+                                            <FaBriefcase></FaBriefcase>
+                                            <Link className=" w-full rounded-none m-0" to="/dashboard/userEvent">
+                                                  Event
+                                            </Link>
+                                        </div>
+                                    </li>
+                                    <li className="mt-3">
+                                        <div className="flex flex-row hover:bg-gray-400">
+                                            <FaBriefcase></FaBriefcase>
+                                            <Link className=" w-full rounded-none m-0" to="/dashboard/payment">
+                                                  Payment History
+                                            </Link>
+                                        </div>
+                                    </li>
+                                </>
+                        }
                     </div>
 
                 </ul>
