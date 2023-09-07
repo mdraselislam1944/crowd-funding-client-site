@@ -1,9 +1,9 @@
-import axios from 'axios';
-import React, { useState } from 'react';
+// import axios from 'axios';
+import  { useState } from 'react';
 import { useLoaderData } from 'react-router';
 import { useNavigate } from 'react-router-dom';
 const ProjectDescription = () => {
-  const [data, setData] = useState(useLoaderData());
+  const [data, ] = useState(useLoaderData());
   const navigate = useNavigate();
   console.log(data)
   const handleAction = (id) => {
@@ -11,7 +11,7 @@ const ProjectDescription = () => {
     const saveUser = {
       status: "approved",
     }
-    fetch(`http://localhost:5000/blogsUpdate/${id}`, {
+    fetch(`https://crowdfunding-gamma.vercel.app/blogsUpdate/${id}`, {
       method: "PATCH",
       headers: {
         'Content-Type': 'application/json'

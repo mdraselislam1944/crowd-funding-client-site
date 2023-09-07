@@ -19,7 +19,7 @@ const AllProject = () => {
     e.preventDefault();
     const search=e.target.search.value;
     console.log(search)
-    axios.get(`http://localhost:5000/blogsSearch/${search}`)
+    axios.get(`https://crowdfunding-gamma.vercel.app/blogsSearch/${search}`)
     .then(result=>setData(result));
   }
 
