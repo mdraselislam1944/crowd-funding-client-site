@@ -37,7 +37,7 @@ import UserPaymentHistory from "../../Dashboard/Users/UserPaymentHistory";
 
 import PrivateRoute from "./PrivateRoute";
 import ChatRoom from "../ChatRoom/ChatRoom";
-import BloggingSite from "../BloggingSite/BloggingSite";
+import SocialSite from "../../SocialSite/SocialSite";
 
 const Router = createBrowserRouter([
     {
@@ -105,7 +105,7 @@ const Router = createBrowserRouter([
     },
     {
       path: "/socialBlog",
-      element: <PrivateRoute><BloggingSite></BloggingSite></PrivateRoute>
+      element: <PrivateRoute><SocialSite></SocialSite></PrivateRoute>
     },
     {
       path: "/dashboard",
