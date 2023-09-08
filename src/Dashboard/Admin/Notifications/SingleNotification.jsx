@@ -89,12 +89,14 @@ const SingleNotification = ({ item, index }) => {
                             <td className="w-[600px] md:text-xl">
                                 {header}
                             </td>
-                            <th>
-                                <button onClick={() => handleApprove(item)} className="btn btn-ghost btn-s border border-gray-500 hover:border-blue-500">Approve</button>
-                            </th>
-                            <th>
-                                <button onClick={() => handleDelete(item)} className="btn btn-ghost btn-s border border-red-500 hover:border-red-700">Delete</button>
-                            </th>
+                           <div className="md:flex gap-3 mt-5  ">
+                           <>
+                                <button onClick={() => handleApprove(item)} className="btn btn-ghost btn-s border border-gray-500 hover:border-blue-500 mb-2 md:mb-0">Approve</button>
+                            </>
+                            <>
+                                <button onClick={() => handleDelete(item)} className="btn btn-ghost btn-s border border-red-500 hover:border-red-700 mb-2 md:mb-0">Delete</button>
+                            </>
+                           </div>
                         </tr>
                     </tbody>
                 </table>

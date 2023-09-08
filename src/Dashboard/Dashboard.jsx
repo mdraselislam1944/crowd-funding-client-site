@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import { FaBars, FaBell, FaCog, FaExpand, FaHouseDamage } from "react-icons/fa";
 import logo from "../assets/img/logo-main/logo.png"
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import {
@@ -9,21 +9,55 @@ import {
 } from "react-icons/fa";
 import useAdmin from "../hooks/useAdmin";
 import useNotification from "../hooks/useNotification";
+import { useContext } from "react";
+import { AuthContext } from "../Providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const Dashboard = () => {
-    const [isAdmin] = useAdmin();
-    const [notification] = useNotification()
 
+    const { user, logOut } = useContext(AuthContext);
+    const [isAdmin] = useAdmin();
+    // console.log(isAdmin, user);
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                toast.success('Logout Successful!');
+                navigate('/');
+            })
+            .catch(error => toast.error(error.message));
+    };
+    const [notification] = useNotification()
+    
 
     return (
+
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content bg-black  flex flex-col items-center justify-center">
                 {/* lg navbar */}
 
                 <Outlet className="h-screen overflow-y-scroll"></Outlet>
+                <div className="h-20 lg:hidden bg-black opacity-50%  top-0 left-0 right-0 absolute border-b-[1px] border-gray-700"></div>
+               <div className="h-20 md:h-24 flex items-center  gap-5 justify-center invisible lg:visible bg-gradient-to-r from-black via-black to-[#F99F24] top-0 left-0 right-0 absolute">
+                     <div className="flex items-center gap-7 justify-center absolute right-5">
+                     <Link to="/"><FaHouseDamage className="text-center text-3xl text-white" /></Link>
+                     <Link to="/dashboard/notifications">
+                            <button className="flex">
+                                <FaBell className="text-center text-3xl text-white" />
+                                <div className="badge">+{notification?.length || 0}</div>
+                            </button>
+                        </Link>
+                         <div className="avatar">
+                            <div className="w-12 cursor-pointer rounded-full" title={user?.displayName}>
+                                 <img src={user?.photoURL} />
+                             </div>
+                         </div>
+                     </div>
+                </div>
 
-                <div className="h-20 lg:hidden bg-black opacity-50%  top-0 left-0 right-0 absolute"></div>
+                {/* <div className="h-20 lg:hidden bg-black opacity-50%  top-0 left-0 right-0 absolute"></div>
                 <div className="h-20 md:h-24 flex items-center  gap-5 justify-center invisible lg:visible bg-gradient-to-r from-black via-black to-[#F99F24] top-0 left-0 right-0 absolute">
                     <div className="flex items-center  justify-center gap-5 absolute left-80 ml-5">
                         <FaBars className="text-center text-3xl text-white" />
@@ -32,19 +66,19 @@ const Dashboard = () => {
                     <div className="flex items-center gap-7 justify-center absolute right-5">
                         <Link to="/"><FaHouseDamage className="text-center text-3xl text-white" /></Link>
                         <FaExpand className="text-center text-3xl text-white" />
-                        <Link to="/dashboard/notifications">
+                        {/* <Link to="/dashboard/notifications">
                             <button className="flex">
                                 <FaBell className="text-center text-3xl text-white" />
                                 <div className="badge">+{notification?.length || 0}</div>
                             </button>
-                        </Link>
-                        <div className="avatar">
+    </Link> */}
+                        {/* <div className="avatar">
                             <div className="w-16 rounded-full">
                                 <img src="https://i.ibb.co/0DP9812/5.jpg" />
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div className="">
                     <div className="md:w-64 w-40 absolute z-30 top-5 md:top-2 md:left-5 left-4 lg:hidden md:hidden block">
                         <Link to="/"><img src={logo} alt="" /></Link>
@@ -220,7 +254,7 @@ const Dashboard = () => {
         </div>
     );
 }
-export  default Dashboard;
+export default Dashboard;
 // // import { useState } from "react";
 // import { FaBars, FaBell, FaHouseDamage } from "react-icons/fa";
 // import logo from "../assets/img/logo-main/logo.png";
@@ -244,19 +278,19 @@ export  default Dashboard;
 // import useAdmin from './../hooks/useAdmin';
 
 // function Dashboard() {
-//     const { user, logOut } = useContext(AuthContext);
-//     const [isAdmin] = useAdmin();
-//     // console.log(isAdmin, user);
-//     const navigate = useNavigate();
+    // const { user, logOut } = useContext(AuthContext);
+    // const [isAdmin] = useAdmin();
+    // // console.log(isAdmin, user);
+    // const navigate = useNavigate();
 
-//     const handleLogout = () => {
-//         logOut()
-//             .then(() => {
-//                 toast.success('Logout Successful!');
-//                 navigate('/');
-//             })
-//             .catch(error => toast.error(error.message));
-//     };
+    // const handleLogout = () => {
+    //     logOut()
+    //         .then(() => {
+    //             toast.success('Logout Successful!');
+    //             navigate('/');
+    //         })
+    //         .catch(error => toast.error(error.message));
+    // };
 
 //     // const [count, setCount] = useState(0)
 //     //   const [orderIsOpen, setOrderIsOpen] = useState(false);
@@ -282,6 +316,7 @@ export  default Dashboard;
 //                     </div>
 //                 </div>
 //                 <div>
+
 //                     <div className="md:w-64 w-40 absolute z-30 top-5 md:top-2 md:left-5 left-4 lg:hidden block">
 //                         <Link to="/"><img src={logo} alt="" /></Link>
 //                     </div>
