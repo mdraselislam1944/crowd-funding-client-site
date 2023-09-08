@@ -8,7 +8,8 @@ export default {
     extend: {
       backgroundImage: {
         'sup': "url('/src/assets/img/OurTeam/sup.png')",
-      }
+      },
+      
     },
   },
   plugins: [require("daisyui")],

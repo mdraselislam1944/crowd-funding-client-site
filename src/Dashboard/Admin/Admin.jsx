@@ -18,6 +18,7 @@ const Admin = () => {
     { month: "November", expenditure: 1900, earning: 2300 },
     { month: "December", expenditure: 2200, earning: 2500 },
   ];
+  
   return (
     <div className="w-full min-h-screen mt-16 md:mt-20 items-center justify-center text-white">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-5 gap-x-5 mt-8 gap-y-5">
