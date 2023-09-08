@@ -96,7 +96,9 @@ const Campaigns = () => {
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:p-12 md:p-12">
-                        {filteredCampaigns?.map(({ _id, image, location, header, desc, date, progress }) => {
+                            {filteredCampaigns
+                                .filter(campaign => campaign.status === 'approved') // Filter by status
+            .map(({ _id, image, location, header, desc, date, progress }) => {
                             return (
                                 <div key={_id} className="card card-compact md:w-96 w-11/12 mx-auto bg-base-100 shadow-xl group">
                                     <figure>

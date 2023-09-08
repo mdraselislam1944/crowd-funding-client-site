@@ -6,10 +6,6 @@ const SocialSite = () => {
         <div>
             <TopBar></TopBar>
             <Outlet/>
-           
-           
-            
-         
         </div>
     );
 };
