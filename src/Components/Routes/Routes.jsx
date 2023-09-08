@@ -32,6 +32,8 @@ import Blog from "../../Dashboard/Users/Blog";
 import Campaign from "../../Dashboard/Users/Campaign";
 import Event from "../../Dashboard/Users/Event";
 import UserPaymentHistory from "../../Dashboard/Users/UserPaymentHistory";
+import PrivateRoute from "../Routes/PrivateRoute";
+import AdminRoute from "./AdminRoute";
 
 
 const Router = createBrowserRouter([
@@ -94,7 +96,7 @@ const Router = createBrowserRouter([
     },
     {
       path: "/dashboard",
-      element:<Dashboard></Dashboard>,
+      element:<PrivateRoute><Dashboard/></PrivateRoute>,
       children:[
         {
           path:"",
@@ -102,17 +104,17 @@ const Router = createBrowserRouter([
         },
         {
           path:"allProject",
-          element:<AllProject></AllProject>,
+          element:<AdminRoute><AllProject></AllProject></AdminRoute>,
           loader:()=>axios.get("https://crowdfunding-gamma.vercel.app/blogs"),
         },
         {
           path:"allUser",
-          element:<AllUsers></AllUsers>,
+          element:<AdminRoute><AllUsers/></AdminRoute>,
           loader:()=>axios.get("https://crowdfunding-gamma.vercel.app/users"),
         },
         {
           path:"description/:id",
-          element:<ProjectDescription/>,
+          element:<AdminRoute><ProjectDescription/></AdminRoute>,
           loader:({params})=>fetch(`https://crowdfunding-gamma.vercel.app/blogs/${params.id}`)
         },
         {

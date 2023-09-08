@@ -39,7 +39,7 @@ const ProjectDescription = () => {
           <p className='my-2'>Address: {data.address}</p>
           <p className='my-2'>Country: {data.country}</p>
           <p className='my-2'>Status: {data.status}</p>
-          <button onClick={() => handleAction(data._id)} className="btn btn-info my-5">change role</button>
+          <button onClick={() => handleAction(data._id)} className="btn btn-info my-5">Approve project</button>
         </div>
         <div className='basis-1/2'>
           <p className='my-2'><small className='font-bold text-2xl'>Project Idea: </small>{data.ideas}</p>
