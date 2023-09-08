@@ -35,6 +35,11 @@ import SocialHeader from "../../SocialSite/SocialHeader/SocialHeader";
 import AddPost from "../../SocialSite/AddPost/AddPost";
 import SocialSite from "../../SocialSite/SocialSite";
 import Notifications from "../../Dashboard/Admin/Notifications/Notifications";
+import AddBlog from "../../Dashboard/Users/AddBlog";
+import Blog from "../../Dashboard/Users/Blog";
+import Campaign from "../../Dashboard/Users/Campaign";
+import Event from "../../Dashboard/Users/Event";
+import UserPaymentHistory from "../../Dashboard/Users/UserPaymentHistory";
 
 const Router = createBrowserRouter([
     {
@@ -185,7 +190,28 @@ const Router = createBrowserRouter([
         {
           path:"revenue",
           element: <AdminRoute><Revenue />  </AdminRoute>       
-        }
+        },
+
+        {
+          path:"userAddBlogs",
+          element: <AddBlog></AddBlog>
+        },
+        {
+          path:"userBlog",
+          element: <Blog></Blog>
+        },
+        {
+          path:"userAddCampaign",
+          element: <Campaign></Campaign>
+        },
+        {
+          path:"AddEvent",
+          element: <Event></Event>
+        },
+        {
+          path:"payment",
+          element: <UserPaymentHistory></UserPaymentHistory>
+        },
       ]
     }
   ]);
