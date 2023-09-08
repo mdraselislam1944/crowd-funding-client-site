@@ -7,7 +7,7 @@ import pic6 from "../../assets/img/others img/jordy-meow-Osd4ngHD4kM-unsplash.jp
 
 const Campaign = () => {
     return (
-        <div className="grid grid-cols-3 gap-7">
+        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-7">
             <div className="card w-96 glass text-white">
                 <figure><img src={pic1} alt="car!"/></figure>
                 <div className="card-body">
