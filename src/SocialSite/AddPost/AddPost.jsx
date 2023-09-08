@@ -1,71 +1,88 @@
-// import "../AddPost/AddPost.css";
-import {
-    PermMedia,
-    Label,
-    Room,
-    EmojiEmotions,
-    Cancel,
-} from "@mui/icons-material";
-import { useContext, } from "react";
-import { key } from "localforage";
-import { AuthContext } from "../../Providers/AuthProvider";
+import { useForm } from "react-hook-form";
+import Swal from 'sweetalert2'
+
 const AddPost = () => {
-    const { user } = useContext(AuthContext);
+    const { register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
+    const onSubmit = (data) => {
+        console.log(data);
+        fetch('http://localhost:5000/socialPostBlog', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body:JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    Swal.fire(
+                        'Good job!',
+                        'You Added a Blog Successfully',
+                        'success'
+                      )
+                } 
+            })
+
+    }
+
+
     return (
-        <div className="share max-w-2xl mx-auto">
-            <div className="shareWrapper">
-                <div className="shareTop flex ps-4">
-                    <img
-                        className="shareProfileImg h-16 w-16 rounded-full"
-                        src={
-                            user.photoURL
-                                ? + user.photoURL
-                                : + "person/noAvatar.png"
-                        }
-                        alt=""
-                    />
-                    <input
-                        placeholder={"What's in your mind " + user.displayName + "?"}
-                        className="shareInput"
-                        ref={key}
-                    />
-                </div>
-                <hr className="shareHr" />
-
-                <div className="shareImgContainer">
-                    <img className="shareImg -mt-5" src="" alt="" />
-                    <Cancel className="shareCancelImg" onClick="" />
-                </div>
-
-                <form className="shareBottom " onSubmit="">
-                    <div className="shareOptions grid grid-cols-5">
-                        <label htmlFor="file" className="shareOption">
-                            <PermMedia htmlColor="tomato" className="shareIcon" />
-                            <span className="shareOptionText">Photo or Video</span>
-                            <input
-                                style={{ display: "none" }}
-                                type="file"
-                                id="file"
-                                accept=".png,.jpeg,.jpg"
-                                onChange=""
-                            />
-                        </label>
-                        <div className="shareOption">
-                            <Label htmlColor="blue" className="shareIcon" />
-                            <span className="shareOptionText">Tag</span>
-                        </div>
-                        <div className="shareOption">
-                            <Room htmlColor="green" className="shareIcon" />
-                            <span className="shareOptionText">Location</span>
-                        </div>
-                        <div className="shareOption">
-                            <EmojiEmotions htmlColor="goldenrod" className="shareIcon" />
-                            <span className="shareOptionText">Feelings</span>
-                        </div>
+        <div className="max-w-7xl mx-auto text-black">
+           
+         
+            <div className="">
+                <form className="" onSubmit={handleSubmit(onSubmit)}>
+                <div >
+                        <h5 className="font-bold text-4xl mt-3">Title</h5>
+                        <input className="p-2  w-full text-black  " defaultValue=""
+                            {...register("sellerName")} />
                     </div>
-                    <button className="shareButton" type="submit">
-                        Share
-                    </button>
+                    <hr className="border border-gray-400" />
+               
+                  <div className="grid grid-cols-3 mt-9">
+                  <div>
+                        <h5 className="font-bold  text-">Photo :</h5>
+                        <input className="p-2  w-3/4 text-    border rounded-3xl" type="file"
+                            {...register("photoURL")}  />
+                    </div>
+                  <div>
+                        <h5 className="font-bold  ">Author - Name :</h5>
+             <input className="p-3  w-3/4 text-black border
+                         rounded-3xl" defaultValue=""
+                            {...register("name")} />
+                    </div>
+                    <div>
+                        <h5 className="font-bold ">Date :</h5>
+                        <input className="p-3 w-3/4  text-black border rounded-3xl" type="date"
+                            {...register("price")} />
+                    </div>
+                  </div>
+                   
+                   
+                   
+                   
+                 
+                   
+                    <div>
+                        <h5 className="font-bold text-2xl mt-3"> Share your Blog </h5>
+                        <input className="  w-full h-96 text-black   border 
+                         rounded-lg" defaultValue="" {...register("details")} />
+                    </div>
+                    <div>
+
+                    </div>
+                    <div className="md:grid md:grid-cols-1 lg:grid grid-cols-1 mt-3">
+
+                        {errors.exampleRequired && <span>This field is required</span>}
+
+                        <input type="submit"  className='btn bg-[#5c771e]
+                       hover:text-black text-black  w-full mt-3 mb-3  '/>
+
+                    </div>
                 </form>
             </div>
         </div>

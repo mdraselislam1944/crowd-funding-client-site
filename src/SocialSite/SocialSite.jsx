@@ -1,9 +1,15 @@
-import AddPost from "./AddPost/AddPost";
+import { Outlet } from "react-router-dom";
+import TopBar from "./TopBar/TopBar";
 
 const SocialSite = () => {
     return (
         <div>
-            <AddPost></AddPost>
+            <TopBar></TopBar>
+            <Outlet/>
+           
+           
+            
+         
         </div>
     );
 };

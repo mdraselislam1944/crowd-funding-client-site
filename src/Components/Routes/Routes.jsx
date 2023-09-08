@@ -37,9 +37,10 @@ import PrivateRoute from "../Routes/PrivateRoute";
 import AdminRoute from "./AdminRoute";
 
 
-import PrivateRoute from "./PrivateRoute";
 import ChatRoom from "../ChatRoom/ChatRoom";
 import SocialSite from "../../SocialSite/SocialSite";
+import AddPost from "../../SocialSite/AddPost/AddPost";
+import SocialHeader from "../../SocialSite/SocialHeader/SocialHeader";
 
 const Router = createBrowserRouter([
     {
@@ -107,7 +108,17 @@ const Router = createBrowserRouter([
     },
     {
       path: "/socialBlog",
-      element: <PrivateRoute><SocialSite></SocialSite></PrivateRoute>
+      element: <PrivateRoute><SocialSite></SocialSite></PrivateRoute>,
+      children: [
+        {
+          path: "addPost",
+          element: <AddPost></AddPost>
+        },
+        {
+          path: "/socialBlog",
+          element:<SocialHeader></SocialHeader>
+        }
+        ]
     },
     {
       path: "/dashboard",
