@@ -33,7 +33,7 @@ const Navbar = () => {
     <nav className="bg-black md:bg-opacity-50 bg-opacity-90 px-7 md:px-0 text-white p-4 shadow font-poppins w-full fixed z-10">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center ms-3">
-          <Link to="/">
+          <Link to="/socialBlog">
             <img src={logo} alt="" className="w-36" />
           </Link>
         </div>
@@ -145,7 +145,7 @@ const Navbar = () => {
         <div className="md:hidden">
           <ul className="mt-6 space-y-4">
             <li>
-              <Link to="/" onClick={handleClose}
+              <Link to="/socialBlog" onClick={handleClose}
                 className="text-white hover:text-gray-300 transition-colors duration-300"
               >
                 Home

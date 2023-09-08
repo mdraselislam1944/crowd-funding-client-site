@@ -2,6 +2,10 @@
 const TheData = () => {
     return (
         <div className="m-2 max-w-5xl mx-auto">
+            <div>
+            <h2 className="text-3xl text-center mt-5 font-bold">Our Blogs</h2>
+        <hr className="border-b-[3px] w-[106px]  border-[#5c771e] mx-auto mb-5 " />
+            </div>
             <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 mb-5">
                 <div>
                     <img className="w-96" src="https://c0.wallpaperflare.com/preview/757/905/82/crowdfunding-funding-ideas-banknote.jpg" alt="" />
