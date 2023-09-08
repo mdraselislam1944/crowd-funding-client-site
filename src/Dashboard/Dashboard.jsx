@@ -5,22 +5,16 @@ import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import {
-    FaAddressCard,
-    FaAngular,
-    FaArtstation,
-
-    FaBriefcase,
-    FaDollarSign,
-    FaExternalLinkAlt,
-    FaLock,
-    FaQrcode,
-    FaRegClone,
+    FaAddressCard, FaAngular, FaArtstation, FaBriefcase, FaDollarSign, FaExternalLinkAlt, FaLock, FaQrcode, FaRegClone,
 } from "react-icons/fa";
 import useAdmin from "../hooks/useAdmin";
+import useNotification from "../hooks/useNotification";
 
 const Dashboard = () => {
     const [isAdmin] = useAdmin();
-    console.log(isAdmin);
+    const [notification] = useNotification()
+
+
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -38,7 +32,12 @@ const Dashboard = () => {
                     <div className="flex items-center gap-7 justify-center absolute right-5">
                         <Link to="/"><FaHouseDamage className="text-center text-3xl text-white" /></Link>
                         <FaExpand className="text-center text-3xl text-white" />
-                        <FaBell className="text-center text-3xl text-white" />
+                        <Link to="/dashboard/notifications">
+                            <button className="flex">
+                                <FaBell className="text-center text-3xl text-white" />
+                                <div className="badge">+{notification?.length || 0}</div>
+                            </button>
+                        </Link>
                         <div className="avatar">
                             <div className="w-16 rounded-full">
                                 <img src="https://i.ibb.co/0DP9812/5.jpg" />
@@ -168,7 +167,7 @@ const Dashboard = () => {
                                         <div className="flex flex-row hover:bg-gray-400">
                                             <FaBriefcase></FaBriefcase>
                                             <Link className=" w-full rounded-none m-0" to="/dashboard/userBlog">
-                                                 My Blogs
+                                                My Blogs
                                             </Link>
                                         </div>
                                     </li>
@@ -192,7 +191,7 @@ const Dashboard = () => {
                                         <div className="flex flex-row hover:bg-gray-400">
                                             <FaBriefcase></FaBriefcase>
                                             <Link className=" w-full rounded-none m-0" to="/dashboard/AddEvent">
-                                                 All Event
+                                                All Event
                                             </Link>
                                         </div>
                                     </li>
@@ -208,7 +207,7 @@ const Dashboard = () => {
                                         <div className="flex flex-row hover:bg-gray-400">
                                             <FaBriefcase></FaBriefcase>
                                             <Link className=" w-full rounded-none m-0" to="/dashboard/payment">
-                                                  Payment History
+                                                Payment History
                                             </Link>
                                         </div>
                                     </li>
