@@ -168,7 +168,7 @@ const Dashboard = () => {
                                         <div className="flex flex-row hover:bg-gray-400">
                                             <FaBriefcase></FaBriefcase>
                                             <Link className=" w-full rounded-none m-0" to="/dashboard/userBlog">
-                                                 Blogs
+                                                 My Blogs
                                             </Link>
                                         </div>
                                     </li>
@@ -176,34 +176,34 @@ const Dashboard = () => {
                                         <div className="flex flex-row hover:bg-gray-400">
                                             <FaBriefcase></FaBriefcase>
                                             <Link className=" w-full rounded-none m-0" to="/dashboard/UserAddCampaign">
-                                                Add Campaign
+                                                All Campaign
                                             </Link>
                                         </div>
                                     </li>
-                                    <li className="mt-3">
+                                    {/* <li className="mt-3">
                                         <div className="flex flex-row hover:bg-gray-400">
                                             <FaBriefcase></FaBriefcase>
                                             <Link className=" w-full rounded-none m-0" to="/dashboard/userCampaign">
                                                  Campaign
                                             </Link>
                                         </div>
-                                    </li>
+                                    </li> */}
                                     <li className="mt-3">
                                         <div className="flex flex-row hover:bg-gray-400">
                                             <FaBriefcase></FaBriefcase>
                                             <Link className=" w-full rounded-none m-0" to="/dashboard/AddEvent">
-                                                 Add Event
+                                                 All Event
                                             </Link>
                                         </div>
                                     </li>
-                                    <li className="mt-3">
+                                    {/* <li className="mt-3">
                                         <div className="flex flex-row hover:bg-gray-400">
                                             <FaBriefcase></FaBriefcase>
                                             <Link className=" w-full rounded-none m-0" to="/dashboard/userEvent">
                                                   Event
                                             </Link>
                                         </div>
-                                    </li>
+                                    </li> */}
                                     <li className="mt-3">
                                         <div className="flex flex-row hover:bg-gray-400">
                                             <FaBriefcase></FaBriefcase>

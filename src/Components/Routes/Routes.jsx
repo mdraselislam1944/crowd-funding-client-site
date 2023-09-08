@@ -25,6 +25,7 @@ import AEvent from "../../Dashboard/Admin/AEvent/AEvent";
 import BlogNews from "../../Dashboard/Admin/BlogNews/BlogNews";
 import AllNews from "../AllNews/AllNews";
 import CampaignDetails from "../../Dashboard/Admin/ACampaign/CampaignDetails";
+
 import AddBlog from "../../Dashboard/Users/AddBlog";
 import AddCampaign from "../../Dashboard/Users/AddCampaign";
 import AddEvent from "../../Dashboard/Users/AddEvent";
@@ -35,6 +36,10 @@ import UserPaymentHistory from "../../Dashboard/Users/UserPaymentHistory";
 import PrivateRoute from "../Routes/PrivateRoute";
 import AdminRoute from "./AdminRoute";
 
+
+import PrivateRoute from "./PrivateRoute";
+import ChatRoom from "../ChatRoom/ChatRoom";
+import SocialSite from "../../SocialSite/SocialSite";
 
 const Router = createBrowserRouter([
     {
@@ -74,6 +79,7 @@ const Router = createBrowserRouter([
         {
           path: "/allNews",
           element: <AllNews></AllNews>
+
         },
         {
           path: "/login",
@@ -90,9 +96,18 @@ const Router = createBrowserRouter([
         {
           path: "/form",
           element: <Info></Info>
-        }
+        },
+        {
+          path: "/chatRoom",
+          element: <PrivateRoute><ChatRoom></ChatRoom></PrivateRoute>
+        },
+        
 
       ]
+    },
+    {
+      path: "/socialBlog",
+      element: <PrivateRoute><SocialSite></SocialSite></PrivateRoute>
     },
     {
       path: "/dashboard",
@@ -120,12 +135,12 @@ const Router = createBrowserRouter([
         {
           path:"aCampaign",
           element:<ACampaign></ACampaign>,
-          loader:()=>fetch('http://localhost:5000/campaigns'),
+          loader:()=>fetch('https://crowdfunding-gamma.vercel.app/campaigns'),
         },
         {
           path:"aCampaign/:id",
           element:<CampaignDetails/>,
-          loader:({params})=>fetch(`http://localhost:5000/campaigns/${params.id}`),
+          loader:({params})=>fetch(`https://crowdfunding-gamma.vercel.app/campaigns/${params.id}`),
         },
         {
           path:"description/:id",
@@ -135,7 +150,7 @@ const Router = createBrowserRouter([
         {
           path:"UserPayment",
           element:<UserPayment></UserPayment>,
-          loader:()=>fetch("http://localhost:5000/paymentHistory"),
+          loader:()=>fetch("https://crowdfunding-gamma.vercel.app/paymentHistory"),
           
         },
         {
