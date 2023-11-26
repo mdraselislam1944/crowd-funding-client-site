@@ -1,22 +1,18 @@
-import { useContext } from 'react';
-
-import { Navigate, useLocation } from 'react-router-dom';
-import { AuthContext } from '../../Providers/AuthProvider';
-
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate, useLocation } from "react-router-dom";
 
 const PrivateRoute = ({children}) => {
-    const { user, loading } =useContext(AuthContext);
-    const location = useLocation();
-    console.log(location);
-
-    if(loading){
-        return <div></div>
+    // const { pathname } = useLocation();
+    const location=useLocation();
+    const dispatch=useDispatch();
+    const {email,isLoading}=useSelector((state)=>state.userSlice);
+    if(isLoading){
+        return <div className="text-center"><span className="loading loading-spinner loading-lg"></span></div>
     }
-
-    if(user){
+    if(email&&!isLoading){
         return children;
     }
-    return <Navigate to="/login" state={{from: location}} replace></Navigate>;
+    return <Navigate to='/login' state={{from:location}} replace></Navigate> ;
 };
 
 export default PrivateRoute;

@@ -13,16 +13,19 @@ import {
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Router from './Components/Routes/Routes';
+import { Provider } from 'react-redux';
+import store from './Redux/store';
 
 const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <AuthProvider>
-      <QueryClientProvider client={queryClient}>
-        <ToastContainer/>
-        <RouterProvider router={Router} />
-      </QueryClientProvider>
-    </AuthProvider>
-  </React.StrictMode>,
+    <Provider store={store}>
+      <AuthProvider>
+        <QueryClientProvider client={queryClient}>
+          <ToastContainer />
+          <RouterProvider router={Router} />
+        </QueryClientProvider>
+      </AuthProvider>
+    </Provider>
+ ,
 )

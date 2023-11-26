@@ -1,15 +1,17 @@
+import { Campaign } from '@mui/icons-material';
 import { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const ACampaign = () => {
-    const [campaigns] = useState(useLoaderData());
+    const campaigns = useState(useLoaderData().data);
+    console.log(campaigns[0])
 
     return (
         <div className='bg-black px-10 w-full h-full mt-28 text-white min-h-[80vh]'>
-           
+
             <div className="flex flex-col md:flex-row gap-6 items-center justify-between mt-5">
                 <h1 className="md:text-4xl text-2xl text-orange-300 normal-case font-semibold">
-                    All Campaigns ({ campaigns.length})
+                    All Campaigns ({campaigns.length})
                 </h1>
                 <div className="form-control mt-1 text-black">
                     <div >
@@ -42,20 +44,51 @@ const ACampaign = () => {
                     </div>
                 </div>
             </div>
-
-            <div className='grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1 gap-5 mt-16 mx-6'>
-                {
-                    campaigns?.map(campaign => <div className="card w-60 glass" key={campaign._id}>
-                        <figure><img className='h-44 w-full' src={campaign.image} alt="" /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title text-base">{campaign.header}</h2>
-                            <p className='text-sm'>{campaign.location}</p>
-                            <div className="card-actions justify-end mt-2">
-                                <Link to={`/dashboard/aCampaign/${campaign._id}`} className="btn btn-sm bg-[#F99F24]">Details!</Link>
-                            </div>
-                        </div>
-                    </div>)
-                }
+            <div className="overflow-x-auto">
+                <table className="table">
+                    {/* head */}
+                    <thead className='text-white'>
+                        <tr>
+                            <th>
+                                #
+                            </th>
+                            <th>Name</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody className='text-white'>
+                        {/* row 1 */}
+                        {
+                            campaigns[0].map((Campaign,index) => <>
+                                <tr key={Campaign._id} className='text-white'>
+                                    <th>
+                                        {++index}
+                                    </th>
+                                    <td>
+                                        <div className="flex items-center gap-3">
+                                            <div className="avatar">
+                                                <div className="mask mask-squircle w-12 h-12">
+                                                    <img src={Campaign?.image} alt="Avatar Tailwind CSS Component" />
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div className="font-bold">{Campaign?.name}</div>
+                                                <div className="text-sm opacity-50">{Campaign?.country}</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>{Campaign?.title.slice(0,30)}....</td>
+                                    <td>{Campaign?.status}</td>
+                                    <th>
+                                        <Link to={`/dashboard/aCampaign/${Campaign._id}`} className="btn btn-ghost btn-xs">details</Link>
+                                    </th>
+                                </tr>
+                            </>)
+                        }
+                    </tbody>
+                </table>
             </div>
         </div>
     );

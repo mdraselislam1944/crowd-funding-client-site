@@ -40,6 +40,7 @@ import Blog from "../../Dashboard/Users/Blog";
 import Campaign from "../../Dashboard/Users/Campaign";
 import Event from "../../Dashboard/Users/Event";
 import UserPaymentHistory from "../../Dashboard/Users/UserPaymentHistory";
+import BdPayment from "../Payment/BdPayment";
 
 const Router = createBrowserRouter([
     {
@@ -74,7 +75,7 @@ const Router = createBrowserRouter([
         },
         {
           path: "/event",
-          element: <Events></Events>
+          element:<Events></Events>
         },
         {
           path: "/allNews",
@@ -94,14 +95,17 @@ const Router = createBrowserRouter([
           element: <Project></Project>
         },
         {
-          path: "/form",
+          path: "/form/:id",
           element: <Info></Info>
         },
         {
           path: "/chatRoom",
           element: <PrivateRoute><ChatRoom></ChatRoom></PrivateRoute>
+        },
+        {
+          path:"/paymentBD/:id",
+          element: <BdPayment/>
         }
-
       ]
     },
     {
@@ -148,12 +152,12 @@ const Router = createBrowserRouter([
         {
           path:"aCampaign",
           element: <AdminRoute><ACampaign></ACampaign></AdminRoute>,
-          loader:()=>fetch('https://crowdfunding-gamma.vercel.app/aCampaign'),
+          loader:()=>fetch('http://localhost:4000/api/campaign'),
         },
         {
           path:"aCampaign/:id",
           element: <AdminRoute><CampaignDetails /></AdminRoute>,
-          loader:({params})=>fetch(`https://crowdfunding-gamma.vercel.app/campaigns/${params.id}`),
+          loader:({params})=>fetch(`http://localhost:4000/api/individualCampaign/${params.id}`),
         },
         {
           path:"description/:id",

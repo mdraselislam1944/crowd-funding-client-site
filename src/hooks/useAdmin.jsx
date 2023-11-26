@@ -1,20 +1,27 @@
-import { useQuery } from "@tanstack/react-query";
-import useAxiosSecure from "./useAxiosSecure";
-import useAuth from "./useAuth";
+import axios from 'axios';
+import React from 'react';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import useAuth from './useAuth';
+import { useState } from 'react';
 
 const useAdmin = () => {
-    const { user, loading } = useAuth();
-    const [axiosSecure] = useAxiosSecure();
-    
-    // use axios secure with react query
-    const { data: isAdmin, isLoading: isAdminLoading } = useQuery({
-        queryKey: ['isAdmin', user?.email],
-        enabled: !loading,
-        queryFn: async () => {
-            const res = await axiosSecure.get(`/users/admin/${user?.email}`);
-            return res.data.admin;
-        }
-    });
-    return [isAdmin, isAdminLoading];
+    const [isAdmin,setIsAdmin]=useState(false);
+    const [loading,setLoading]=useState(true);
+     useAuth();
+    const { isLoading, isError, error, email, name, image } = useSelector((state) => state.userSlice);
+    useEffect(()=>{
+        axios.get(`http://localhost:4000/api/authentication/admin/${email}`,{
+            headers:{
+                Authorization: `bearer ${localStorage.getItem('set-token-for-user')}`
+            }
+        })
+        .then(res=>{
+            setIsAdmin(res.data.admin);
+            setLoading(false);
+        });
+    },[email,name]);
+    return [isAdmin,loading];
 };
+
 export default useAdmin;

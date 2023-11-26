@@ -1,16 +1,16 @@
 import { useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import useAuth from './useAuth';
+import { useDispatch } from 'react-redux';
+import { logoutUser } from '../Redux/user/userSlice';
 
 const axiosSecure = axios.create({
-  baseURL: 'https://crowdfunding-gamma.vercel.app',
+  baseURL: 'http://localhost:4000/api',
 });
 
 const useAxiosSecure = () => {
-  const { logOut } = useAuth();
   const navigate = useNavigate();
-
+  const dispatch=useDispatch();
   useEffect(() => {
     axiosSecure.interceptors.request.use((config) => {
       const token = localStorage.getItem('set-token-for-user');
@@ -24,13 +24,13 @@ const useAxiosSecure = () => {
       (response) => response,
       async (error) => {
         if (error.response && (error.response.status === 401 || error.response.status === 403)) {
-          await logOut();
+            dispatch(logoutUser());
           navigate('/login');
         }
         return Promise.reject(error);
       }
     );
-  }, [logOut, navigate]);
+  }, [dispatch(logoutUser()),navigate]);
 
   return [axiosSecure];
 };

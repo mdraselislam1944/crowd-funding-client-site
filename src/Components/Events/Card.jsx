@@ -8,6 +8,12 @@ const Card = ({ item }) => {
         publish_date,
         publisher_name,
         publisher_image } = item;
+
+        const date = new Date(publish_date);
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = date.toLocaleDateString('en-US', options);
+
+
     return (
         <div className="card w-96 mb-5 text-white  shadow-none ">
            
@@ -30,7 +36,7 @@ const Card = ({ item }) => {
                             <img className="rounded-full w-12 h-12" src={publisher_image} alt="" />
                         </div>
                        <div>
-                       {publish_date}
+                       {formattedDate}
                         <br />
                         {publisher_name}
                        </div>

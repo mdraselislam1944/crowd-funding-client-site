@@ -2,13 +2,15 @@ import { useLoaderData } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const CampaignDetails = () => {
-    const data = useLoaderData();
+    const data = useLoaderData().data;
+    
+    console.log(data)
 
     const handleAction = (id) => {
         const saveData = {
             status: 'approved',
         };
-        fetch(`https://crowdfunding-gamma.vercel.app/individualCampaign/${id}`, {
+        fetch(`http://localhost:4000/individualCampaign/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
@@ -28,6 +30,11 @@ const CampaignDetails = () => {
             });
     };
 
+    const date = new Date(data.date);
+
+    // Format the date as a string in a locale-specific way
+    const formattedDate = date.toLocaleDateString();
+
 
     return (
         <div >
@@ -36,14 +43,14 @@ const CampaignDetails = () => {
             <div className="card card-side text-white shadow-xl">
                 <figure><img className='w-96' src={data.image} alt="Movie" /></figure>
                 <div className="card-body">
-                    <h2 className="card-title">{data.header}</h2>
-                    <p>{data.desc}</p>
-                    <p>{data.location}</p>
-                    <p>{data.date}</p>
+                    <h2 className="card-title">{data.name}</h2>
+                    <p>{data.description}</p>
+                    <p>{data.district}</p>
+                    <p>{formattedDate}</p>
                     <div className="card-actions justify-end">
 
-                        <p><progress className="progress progress-warning bg-white h-6 w-96" value={data.progress} max="100">{data.progress}</progress>
-                        </p>
+                        {/* <p><progress className="progress progress-warning bg-white h-6 w-96" value={data.progress} max="100">{data.progress}</progress>
+                        </p> */}
                         {/* <p className='progress progress-error h-6 rounded-full bg-orange-300 text-center text-black'>{data.progress} %</p> */}
                         <button disabled={data.status === 'approved'} onClick={() => handleAction(data._id)} className="btn bg-[#F99F24]">Approve</button>
                     </div>

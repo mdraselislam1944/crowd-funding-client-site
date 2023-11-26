@@ -5,26 +5,28 @@ import img2 from '../../../assets/images/about-2.png';
 // import { AuthContext } from '../../../Providers/AuthProvider'; 
 import { useRef, useEffect } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
+import { useGetPostsQuery, useSetPostsMutation } from '../../../Redux/features/api/baseApi';
 
 
 const About = () => {
-  // const {logOut}=useContext(AuthContext);
-  // const handleLogout = () => {
-  //   logOut()
-  //     .then(res => res.json())
-  //     .catch(error => {
-  //       localStorage.removeItem('set-token-for-user');
-  //       alert("Logout Successfully")
-  //     })
 
-  // }
+  // const {data,isLoading,isError,error}=useGetPostsQuery();
+  // console.log(data);
+
+  const [setData,{data:postData}]=useSetPostsMutation();
+
+  const onSubmitData=(data)=>{
+    setData(data);
+    console.log(postData);
+  }
+
   const ref = useRef(null)
   const isInView = useInView(ref)
 
   const mainControls = useAnimation()
 
   useEffect(() => {
-    console.log(isInView);
+    // console.log(isInView);
     if (isInView) {
       mainControls.start("visible")
     }

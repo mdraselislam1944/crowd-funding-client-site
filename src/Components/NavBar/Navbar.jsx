@@ -2,14 +2,35 @@ import { useContext, useState } from "react";
 import logo from "../../assets/img/logo-main/Orange_Black_Hummingbird_Tech_Digital_Bird_Logo__1_-removebg-preview.png"
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { getAuth } from "firebase/auth";
-import { app } from "../../Firebase/firebaseConfig";
-// import { space } from "postcss/lib/list";
-// import { AuthContext } from "../../Providers/AuthProvider";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutUser, setUser, toggleLoading } from "../../Redux/user/userSlice";
+import auth from "../../Firebase/firebaseConfig";
+import { useEffect } from "react";
+import profile from "../../assets/professional.jpg";
 
 const Navbar = () => {
   const {user, logOut} = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [status,setStatus]=useState(false);
+  const dispatch=useDispatch();
+  const {email,isLoading,image}=useSelector((state)=>state.userSlice);
+  useEffect(()=>{
+    onAuthStateChanged(auth,(user)=>{
+      if(user){
+        dispatch(setUser({
+          name:user.displayName,
+          email:user.email,
+          image:user.photoURL,
+        }),)
+        dispatch(toggleLoading(false));
+      }
+      else{
+        dispatch(toggleLoading(false));
+      }
+    })
+  },[])
+
 
   const handleClose = () => setIsMenuOpen(false);
 
@@ -17,17 +38,15 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const auth = getAuth(app);
   const handleLogOut = () => {
-    logOut(auth)
-      .then(result => { 
-        localStorage.removeItem('set-token-for-user')
-        result
-       })
-      .catch(error => {
-        console.log(error);
-      })
+    dispatch(logoutUser());
+    setStatus(true);
   }
+  if(status){
+    localStorage.removeItem('set-token-for-user');
+    setStatus(false);
+  }
+
 
   return (
     <nav className="bg-black md:bg-opacity-50 bg-opacity-90 px-7 md:px-0 text-white p-4 shadow font-poppins w-full fixed z-10">
@@ -79,7 +98,7 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
-           { user &&
+           { email &&
            <li>
               <Link to="/dashboard"
                 className="text-white hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
@@ -92,11 +111,11 @@ const Navbar = () => {
        
         <div className="hidden md:flex items-center">
         {
-            user ?
+            email ?
             <span className="flex items-center gap-3">
               <div className="avatar placeholder">
                 <div className="bg-neutral-focus text-neutral-content rounded-full w-12">
-                <img  src={user.photoURL} alt="" />
+                <img src={image || profile} alt="" />
                 </div>
               </div>
               <Link><button className='btn bg-[#F99F24] text-white border-none me-3 px-4  hover:bg-black hover:text-[#F99F24]' onClick={handleLogOut}>LogOut</button></Link>
@@ -184,7 +203,7 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
-            { user &&
+            { email &&
            <li>
               <Link to="/dashboard"
                 className="text-white hover:text-gray-300 border-b-2 border-transparent transition-colors duration-300"
@@ -194,11 +213,11 @@ const Navbar = () => {
             </li>}
           </ul>
           {
-            user ?
+            email ?
               <span className="flex items-center gap-3">
                 <div className="avatar placeholder">
                 <div className="bg-neutral-focus text-neutral-content rounded-full w-16">
-                 <img  src={user.photoURL} alt="" />
+                 <img  src={image|profile} alt="" />
                 </div>
               </div>
               

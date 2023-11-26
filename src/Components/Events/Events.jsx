@@ -6,20 +6,20 @@ import bg from "../../assets/Video/wallpaperflarecom_wallpaper.jpg"
 import Card from "./Card";
 import { useRef } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
+import axios from "axios";
 
 
 
 const Events = () => {
     const [items, setItems] = useState([]);
-    useEffect(() => {
-        fetch("event.json")
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                setItems(data);
-            })
+    useEffect(async () => {
+        const result = await axios.get('http://localhost:4000/api/getEvent');
+        setItems(result.data)
     }, [])
 
+    if(items){
+        console.log(items)
+    }
 
     const ref = useRef(null)
     const isInView = useInView(ref)
@@ -60,18 +60,18 @@ const Events = () => {
                 >
                     <h2 className="text-3xl font-bold text-white ">Our All Events</h2>
                     <hr className="border-b-[3px] w-[106px] mt-1 mb-5 border-[#F99F24] mx-auto" />
-               
-                <div className="mb-6 relative w-10/12 mx-auto md:w-[20%]  ">
-                    <input
-                        type="text"
-                        placeholder="Search Here..."
-                        value=""
-                        onChange=""
-                        className="w-full px-4 py-2 mt-3  border border-black rounded-full text-black placeholder-black
+
+                    <div className="mb-6 relative w-10/12 mx-auto md:w-[20%]  ">
+                        <input
+                            type="text"
+                            placeholder="Search Here..."
+                            value=""
+                            onChange=""
+                            className="w-full px-4 py-2 mt-3  border border-black rounded-full text-black placeholder-black
                     bg-gradient-to-r from-[#F99F24] from-10% to-white to-90%"
-                    />
-                    <BsSearch className="absolute top-[30%] right-2 text-black  p-1 w-8 h-8 rounded-full" />
-                </div>
+                        />
+                        <BsSearch className="absolute top-[30%] right-2 text-black  p-1 w-8 h-8 rounded-full" />
+                    </div>
                 </motion.div>
             </div>
             <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 p-2  gap-2" >

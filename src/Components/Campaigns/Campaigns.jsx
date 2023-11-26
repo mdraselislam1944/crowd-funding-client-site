@@ -26,9 +26,9 @@ const Campaigns = () => {
         setIsLoading(true);
 
         const filtered = pages.filter(campaign => {
-            const searchTerm = searchText.toLowerCase();
-            const headerMatch = campaign.header.toLowerCase().includes(searchTerm);
-            const locationMatch = campaign.location.toLowerCase().includes(searchTerm);
+            const searchTerm = searchText?.toLowerCase();
+            const headerMatch = campaign.header?.toLowerCase().includes(searchTerm);
+            const locationMatch = campaign?.location?.toLowerCase().includes(searchTerm);
             return headerMatch || locationMatch;
         });
 
